@@ -92,11 +92,17 @@ module.exports.routes = {
   'post /api/goods/update': 'goods.update',
   'get /api/goods/find': 'goods.find',
 
-  //货位管理接口
+  //出库管理接口
   'post /api/stockIn/add': 'stockIn.add',
   'post /api/stockIn/delete': 'stockIn.delete',
   'post /api/stockIn/update': 'stockIn.update',
   'get /api/stockIn/find': 'stockIn.find',
+
+  //入库管理接口
+  'post /api/stockOut/add': 'stockOut.add',
+  'post /api/stockOut/delete': 'stockOut.delete',
+  'post /api/stockOut/update': 'stockOut.update',
+  'get /api/stockOut/find': 'stockOut.find',
 
   /***************************************************************************
   *                                                                          *
