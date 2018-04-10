@@ -13,10 +13,6 @@ module.exports = {
       unique: true
     },
     driverName: {
-      type: 'string',
-      unique: true
-    },
-    areaCode: {
       type: 'string'
     },
     driverTele: {

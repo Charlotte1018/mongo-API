@@ -6,62 +6,68 @@
  */
 
 module.exports = {
-  tableName:'stockOut',
+  tableName: 'stockOut',
   attributes: {
-    socialcreditCode:{
-      type:'string'
+    socialcreditCode: {
+      type: 'string'
     },
-    stockoutNo:{
-      type:'string'
+    stockoutNo: {
+      type: 'string'
     },
-    variety:{
-      type:'string'
+    variety: {
+      type: 'string'
     },
-    grade:{
-      type:'string'
+    grade: {
+      type: 'string'
     },
-    production:{
-      type:'string'
+    production: {
+      type: 'string'
     },
-    producingYear:{
-      type:'string'
+    producingYear: {
+      type: 'string'
     },
-    stockoutCount:{
-      type:'string'
+    stockoutCount: {
+      type: 'string'
     },
-    packing:{
-      type:'string'
+    packing: {
+      type: 'string',
+      enum: ['包装', '散装']
     },
-    carriageType:{
-      type:'string'
+    carriageType: {
+      type: 'string'
     },
-    carriageNo:{
-      type:'string'
+    carriageNo: {
+      type: 'string'
     },
-    stockoutTime:{
-      type:'string'
+    stockoutTime: {
+      type: 'string'
     },
     //承运方的社会信用代码
-    carriage:{
-      type:'string'
+    carriage: {
+      type: 'string'
     },
     //承运方的名称
-    carriageName:{
-      type:'string'
+    carriageName: {
+      type: 'string'
+    },
+    //运单号
+    waybillNo: {
+      type: 'string',
+      unique: true
     },
     //下游社会信用代码
-    downstreamorganizationCode:{
-      type:'string'
+    downstreamorganizationCode: {
+      type: 'string'
     },
     //下游企业名称
-    downstreamcompanyName:{
-      type:'string'
+    downstreamcompanyName: {
+      type: 'string'
     },
-    contractNo:{
-      type:'string'
+    contractNo: {
+      type: 'string'
     },
-    goodsCode:{
-      type:'string'
+    goodsCode: {
+      type: 'string'
     }
   }
 };

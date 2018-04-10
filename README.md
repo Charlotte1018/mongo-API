@@ -1139,14 +1139,12 @@ POST /carriage/driver/add
 ---|---|---|---
 socialcreditCode|string|社会信用代码|Y
 driverName|enum|司机姓名（汽车，船舶）|Y
-areaCode|string|电话区号|Y
 driverTele|string|司机电话|Y
 ##### input:
 ```
 {
   "socialcreditCode":"2",
   "driverName":"Lucy",
-  "areaCode":"+86",
   "driverTele":"18811715625"
 }
 ```
@@ -1158,7 +1156,6 @@ driverTele|string|司机电话|Y
     "data": {
         "socialcreditCode": "2",
         "driverName": "Lucy",
-        "areaCode": "+86",
         "driverTele": "18811715625",
         "createdAt": "2018-04-09T02:32:04.724Z",
         "updatedAt": "2018-04-09T02:32:04.724Z",
@@ -1198,7 +1195,6 @@ id|string|编号|Y
         {
             "socialcreditCode": "2",
             "driverName": "时昌雪2",
-            "areaCode": "+86",
             "driverTele": "18811715625",
             "createdAt": "2018-04-09T02:32:04.724Z",
             "updatedAt": "2018-04-09T02:32:04.724Z",
@@ -1223,14 +1219,13 @@ POST /carriage/driver/update
 参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
 ---|---|---|---
 id|string|编号|Y
-areaCode|string|电话区号|N
 carriageType|string|运力类型|N
 
 ##### input:
 ```
 {
   "id":"5acad351ae906d3604cdd3bc",
-  "areaCode":"+85"
+  "driverName":"Lucy"
 }
 ```
 ##### output:
@@ -1242,7 +1237,6 @@ carriageType|string|运力类型|N
         {
             "socialcreditCode": "2",
             "driverName": "Lucy",
-            "areaCode": "+85",
             "driverTele": "18811715625",
             "createdAt": "2018-04-09T02:43:29.057Z",
             "updatedAt": "2018-04-09T02:43:43.837Z",
@@ -1252,7 +1246,7 @@ carriageType|string|运力类型|N
 }
 ```
 <a id="carriage/driver/find"></a>
-#### 4.查找运力
+#### 4.查找司机
 ##### 接口地址
 ```
 GET /carriage/driver/find
@@ -1283,7 +1277,6 @@ socialcreditCode|string|社会信用代码|Y
         {
             "socialcreditCode": "2",
             "driverName": "时昌雪2",
-            "areaCode": "+85",
             "driverTele": "18811715625",
             "createdAt": "2018-04-09T02:43:29.057Z",
             "updatedAt": "2018-04-09T02:43:43.837Z",

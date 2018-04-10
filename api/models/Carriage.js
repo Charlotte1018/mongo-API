@@ -47,7 +47,7 @@ module.exports = {
     email: {
       type: 'string'
     },
-    fax:{
+    fax: {
       type: 'string'
     },
     status: {

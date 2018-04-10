@@ -37,7 +37,8 @@ module.exports = {
       type:'string'
     },
     packing:{
-      type:'string'
+      type:'string',
+      enum: ['包装', '散装']
     },
     //运力类型
     carriageType:{

@@ -68,6 +68,12 @@ module.exports.routes = {
   'post /api/carriage/driver/update': 'driver.update',
   'get /api/carriage/driver/find': 'driver.find',
 
+  //物流企业登记运输信息接口
+  'post /api/carriage/carriageInfo/add': 'carriageInfo.add',
+  'post /api/carriage/carriageInfo/delete': 'carriageInfo.delete',
+  'post /api/carriage/carriageInfo/update': 'carriageInfo.update',
+  'get /api/carriage/carriageInfo/find': 'carriageInfo.find',
+
   //库区管理接口
   'post /api/reservoir/add': 'reservoir.add',
   'post /api/reservoir/delete': 'reservoir.delete',
