@@ -1,7 +1,7 @@
 > **粮食溯源数据库接口**
 ##### 基本接口地址：
 ```
-http://101.200.32.35:1337/api
+http://47.95.252.170:1337/api
 ```
 ### 目录
 ---
@@ -1686,5 +1686,420 @@ socialcreditCode|string|社会信用代码|Y
 }
 ```
 
+### 廒间管理
+<a id="/ao/add"></a>
+#### 1.添加廒间
+##### 接口地址
+```
+POST /ao/add
+```
+##### 接口作用：
 
+```
+物流企业添加廒间
+```
+接口参数
 
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+reservoirNo|string|库区号|Y
+reservoirName|string|库区名称|Y
+stockNo|string|仓库号|Y
+stockName|string|仓库名称|Y
+aoNo|string|廒间号|Y
+aoName|string|廒间名称|Y
+capacity|string|容量|Y
+##### input:
+```
+{
+	"socialcreditCode":"1",
+	"reservoirNo":"001",
+	"reservoirName":"库区1",
+	"stockNo":"001",
+	"stockName":"仓库1",
+	"aoNo":"001",
+	"aoName":"廒间1",
+	"capacity":"200"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "1",
+        "reservoirNo": "001",
+        "reservoirName": "库区1",
+        "stockNo": "001",
+        "stockName": "仓库1",
+        "aoNo": "001",
+        "aoName": "廒间1",
+        "capacity": "200",
+        "createdAt": "2018-04-10T11:50:37.898Z",
+        "updatedAt": "2018-04-10T11:50:37.898Z",
+        "id": "5acca50d0968d70e6cac7d78"
+    }
+}
+```
+
+<a id="/ao/delete"></a>
+#### 2.删除廒间
+##### 接口地址
+```
+POST /ao/delete
+```
+##### 接口作用：
+
+```
+物流企业删除廒间
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+
+##### input:
+```
+{
+  "id":"5acad467ae906d3604cdd3bd"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "reservoirNo": "001",
+            "reservoirName": "库区1",
+            "stockNo": "001",
+            "stockName": "仓库1",
+            "aoNo": "001",
+            "aoName": "廒间1",
+            "capacity": "200",
+            "createdAt": "2018-04-10T12:57:56.475Z",
+            "updatedAt": "2018-04-10T12:57:56.475Z",
+            "id": "5accb4d4c8df950620674b21"
+        }
+    ]
+}
+```
+
+<a id="/ao/update"></a>
+#### 3.更新廒间
+##### 接口地址
+```
+POST /stock/update
+```
+##### 接口作用：
+
+```
+物流企业更新廒间
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+reservoirName|string|仓库名称|N
+
+##### input:
+```
+{
+  "id":"5acae874ae906d3604cdd3be",
+  "reservoirName": "库区1"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "reservoirNo": "001",
+            "reservoirName": "库区1",
+            "stockNo": "001",
+            "stockName": "仓库1",
+            "stockType": "圆筒仓",
+            "capacity": "10000",
+            "vaildCapacity": "10000",
+            "createdAt": "2018-04-09T04:32:31.964Z",
+            "updatedAt": "2018-04-09T04:33:03.019Z",
+            "id": "5acaecdfae906d3604cdd3c0"
+        }
+    ]
+}
+```
+<a id="/ao/find"></a>
+#### 4.查找廒间
+##### 接口地址
+```
+POST /stock/find
+```
+##### 接口作用：
+
+```
+物流企业查找廒间
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"1"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "reservoirNo": "001",
+            "reservoirName": "库区1",
+            "stockNo": "001",
+            "stockName": "仓库1",
+            "aoNo": "001",
+            "aoName": "廒间1",
+            "capacity": "200",
+            "createdAt": "2018-04-10T13:01:22.009Z",
+            "updatedAt": "2018-04-10T13:01:22.009Z",
+            "id": "5accb5a2c8df950620674b22"
+        }
+    ]
+}
+```
+
+### 货位管理
+<a id="/goods/add"></a>
+#### 1.添加货位
+##### 接口地址
+```
+POST /goods/add
+```
+##### 接口作用：
+
+```
+物流企业添加货位
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+reservoirNo|string|库区号|Y
+reservoirName|string|库区名称|Y
+stockNo|string|仓库号|Y
+stockName|string|仓库名称|Y
+aoNo|string|廒间号|Y
+aoName|string|廒间名称|Y
+goodsNo|string|货位号|Y
+goodsName|string|货位名称|Y
+sealingMark|string|封仓时间|Y
+goodsCode|string|货位编码|Y
+capacity|string|容量|Y
+##### input:
+```
+{
+	"socialcreditCode":"1",
+	"reservoirNo":"001",
+	"reservoirName":"库区1",
+	"stockNo":"001",
+	"stockName":"仓库1",
+	"aoNo":"001",
+	"aoName":"廒间1",
+	"goodsNo":"001",
+	"goodsName":"货位1",
+	"sealingMark":"20180408",
+	"goodsCode":"001001001",
+	"capacity":"200"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "1",
+        "reservoirNo": "001",
+        "reservoirName": "库区1",
+        "stockNo": "001",
+        "stockName": "仓库1",
+        "aoNo": "001",
+        "aoName": "廒间1",
+        "goodsNo": "001",
+        "goodsName": "货位1",
+        "sealingMark": "20180408",
+        "goodsCode": "001001001",
+        "capacity": "200",
+        "createdAt": "2018-04-10T13:10:24.429Z",
+        "updatedAt": "2018-04-10T13:10:24.429Z",
+        "id": "5accb7c0e2957fe40f231b66"
+    }
+}
+```
+
+<a id="/goods/delete"></a>
+#### 2.删除货位
+##### 接口地址
+```
+POST /goods/delete
+```
+##### 接口作用：
+
+```
+物流企业删除货位
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+
+##### input:
+```
+{
+  "id":"5accb7c0e2957fe40f231b66"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "reservoirNo": "001",
+            "reservoirName": "库区1",
+            "stockNo": "001",
+            "stockName": "仓库1",
+            "aoNo": "001",
+            "aoName": "廒间1",
+            "goodsNo": "001",
+            "goodsName": "货位1",
+            "sealingMark": "20180408",
+            "goodsCode": "001001001",
+            "capacity": "200",
+            "createdAt": "2018-04-10T13:10:24.429Z",
+            "updatedAt": "2018-04-10T13:10:24.429Z",
+            "id": "5accb7c0e2957fe40f231b66"
+        }
+    ]
+}
+```
+
+<a id="/goods/update"></a>
+#### 3.更新货位
+##### 接口地址
+```
+POST /goods/update
+```
+##### 接口作用：
+
+```
+物流企业更新货位
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+reservoirName|string|仓库名称|N
+
+##### input:
+```
+{
+  "id":"5acae874ae906d3604cdd3be",
+  "reservoirName": "库区1"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+            "socialcreditCode": "2",
+            "reservoirNo": "001",
+            "reservoirName": "库区1",
+            "stockNo": "001",
+            "stockName": "仓库1",
+            "aoNo": "001",
+            "aoName": "廒间1",
+            "goodsNo": "001",
+            "goodsName": "货位1",
+            "sealingMark": "20180408",
+            "goodsCode": "001001001",
+            "capacity": "200",
+            "createdAt": "2018-04-10T13:14:22.084Z",
+            "updatedAt": "2018-04-10T13:14:33.641Z",
+            "id": "5accb8aec8df950620674b24"
+        }
+    ]
+}
+```
+<a id="/goods/find"></a>
+#### 4.查找货位
+##### 接口地址
+```
+POST /goods/find
+```
+##### 接口作用：
+
+```
+物流企业查找货位
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"1"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "reservoirNo": "001",
+            "reservoirName": "库区1",
+            "stockNo": "001",
+            "stockName": "仓库1",
+            "aoNo": "001",
+            "aoName": "廒间1",
+            "goodsNo": "001",
+            "goodsName": "货位1",
+            "sealingMark": "20180408",
+            "goodsCode": "001001001",
+            "capacity": "200",
+            "createdAt": "2018-04-10T13:14:22.084Z",
+            "updatedAt": "2018-04-10T13:14:22.084Z",
+            "id": "5accb8aec8df950620674b24"
+        }
+    ]
+}
+```
