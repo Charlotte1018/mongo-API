@@ -9,8 +9,7 @@ module.exports = {
   tableName: 'driver',
   attributes: {
     socialcreditCode: {
-      type: 'string',
-      unique: true
+      type: 'string'
     },
     driverName: {
       type: 'string'
