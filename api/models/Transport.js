@@ -9,8 +9,7 @@ module.exports = {
   tableName: 'transport',
   attributes: {
     socialcreditCode: {
-      type: 'string',
-      unique: true
+      type: 'string'
     },
     carriageType: {
       type: 'string',
