@@ -2187,9 +2187,9 @@ fax|string|传真|Y
 	"province":"北京",
 	"city":"北京",
 	"address":"北京朝阳区",
-	"lealPerson":"时昌雪",
+	"lealPerson":"lucy",
 	"legalTele":"18811715625",
-	"companyLinkman":"张翰臣",
+	"companyLinkman":"jeo",
 	"companyTele":"188116653748",
 	"email":"920189165@qq.com",
 	"fax":"123-47899"
@@ -2207,9 +2207,9 @@ fax|string|传真|Y
         "province": "北京",
         "city": "北京",
         "address": "北京朝阳区",
-        "lealPerson": "时昌雪",
+        "lealPerson": "lucy",
         "legalTele": "18811715625",
-        "companyLinkman": "张翰臣",
+        "companyLinkman": "jeo",
         "companyTele": "188116653748",
         "email": "920189165@qq.com",
         "fax": "123-47899",
@@ -2257,9 +2257,9 @@ id|string|删除编号|Y
             "province": "北京",
             "city": "北京",
             "address": "北京朝阳区",
-            "lealPerson": "时昌雪",
+            "lealPerson": "lucy",
             "legalTele": "18811715625",
-            "companyLinkman": "张翰臣",
+            "companyLinkman": "jeo",
             "companyTele": "188116653748",
             "email": "920189165@qq.com",
             "fax": "123-47899",
@@ -2310,9 +2310,9 @@ reservoirName|string|仓库名称|N
             "province": "北京",
             "city": "北京",
             "address": "北京朝阳区",
-            "lealPerson": "时昌雪",
+            "lealPerson": "lucy",
             "legalTele": "18811715625",
-            "companyLinkman": "张翰臣",
+            "companyLinkman": "jeo",
             "companyTele": "188116653748",
             "email": "920189165@qq.com",
             "fax": "123-47899",
@@ -2360,15 +2360,263 @@ socialcreditCode|string|社会信用代码|Y
             "province": "北京",
             "city": "北京",
             "address": "北京朝阳区",
-            "lealPerson": "时昌雪",
+            "lealPerson": "lucy",
             "legalTele": "18811715625",
-            "companyLinkman": "张翰臣",
+            "companyLinkman": "joe",
             "companyTele": "188116653748",
             "email": "920189165@qq.com",
             "fax": "123-47899",
             "createdAt": "2018-04-11T04:51:56.404Z",
             "updatedAt": "2018-04-11T04:51:56.404Z",
             "id": "5acd946cc8df950620674b29"
+        }
+    ]
+}
+```
+### 五.企业入库管理
+<a id="/stockIn/add"></a>
+- [x] [回到顶部](#top)
+#### 1.添加入库信息
+##### 接口地址
+```
+POST /stockIn/add
+```
+##### 接口作用：
+
+```
+企业添加入库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+stockinidentificationCode|string|入库识别码|Y
+stockinNo|string|入库流水号|Y
+variety|string|种类|Y
+grade|string|等级|Y
+production|string|产地|Y
+producingYear|string|生产年份|Y
+stockinCount|string|入库数量|Y
+packing|string|包装方式（枚举：包装，散装）|Y
+carriageType|string|运输类型（枚举：汽车，船舶）|Y
+carriageNo|string|车号／船号|Y
+stockinTime|string|入库时间|Y
+upstreamorganizationCode|string|下游企业社会信用代码|Y
+contractNo|string|合同号|Y
+goodsCode|string|货位编码|Y
+IPFS|string|上传至ipfs的hash|Y
+##### input:
+```
+{
+	"socialcreditCode":"1234567",
+	"stockinidentificationCode":"123400100100100120180410",
+	"stockinNo":"shichangxue",
+	"variety":"小麦",
+	"grade":"二级",
+	"production":"黑龙江",
+	"producingYear":"2018",
+	"stockinCount":"10000",
+	"packing":"包装",
+	"carriageType":"汽车",
+	"carriageNo":"34hhjk8",
+	"stockinTime":"20180410",
+	"upstreamorganizationCode":"123456",
+	"contractNo":"dsahkflj43794",
+	"goodsCode":"001001001001",
+	"IPFS":"Qmdsfhuoefonfsdnncnsjf"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "1234567",
+        "stockinidentificationCode": "123400100100100120180410",
+        "stockinNo": "shichangxue",
+        "variety": "小麦",
+        "grade": "二级",
+        "production": "黑龙江",
+        "producingYear": "2018",
+        "stockinCount": "10000",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "34hhjk8",
+        "stockinTime": "20180410",
+        "upstreamorganizationCode": "123456",
+        "contractNo": "dsahkflj43794",
+        "goodsCode": "001001001001",
+        "IPFS": "Qmdsfhuoefonfsdnncnsjf",
+        "createdAt": "2018-04-11T05:33:23.832Z",
+        "updatedAt": "2018-04-11T05:33:23.832Z",
+        "id": "5acd9e23c8df950620674b2e"
+    }
+}
+```
+
+<a id="/stockIn/delete"></a>
+- [x] [回到顶部](#top)
+#### 2.删除入库信息
+##### 接口地址
+```
+POST /stockIn/delete
+```
+##### 接口作用：
+
+```
+企业删除入库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+
+##### input:
+```
+{
+  "id":"5acd946cc8df950620674b29"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+        "socialcreditCode": "1234567",
+        "stockinidentificationCode": "123400100100100120180410",
+        "stockinNo": "shichangxue",
+        "variety": "小麦",
+        "grade": "二级",
+        "production": "黑龙江",
+        "producingYear": "2018",
+        "stockinCount": "10000",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "34hhjk8",
+        "stockinTime": "20180410",
+        "upstreamorganizationCode": "123456",
+        "contractNo": "dsahkflj43794",
+        "goodsCode": "001001001001",
+        "IPFS": "Qmdsfhuoefonfsdnncnsjf",
+        "createdAt": "2018-04-11T05:33:23.832Z",
+        "updatedAt": "2018-04-11T05:33:23.832Z",
+        "id": "5acd9e23c8df950620674b2e"
+        }
+    ]
+}
+```
+
+<a id="/stockIn/update"></a>
+- [x] [回到顶部](#top)
+#### 3.更新入库信息
+##### 接口地址
+```
+POST /stockIn/update
+```
+##### 接口作用：
+
+```
+企业更新入库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+reservoirName|string|仓库名称|N
+
+##### input:
+```
+{
+  "id":"5acae874ae906d3604cdd3be",
+  "stockinNo": "123"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+        "socialcreditCode": "1234567",
+        "stockinidentificationCode": "123400100100100120180410",
+        "stockinNo": "123",
+        "variety": "小麦",
+        "grade": "二级",
+        "production": "黑龙江",
+        "producingYear": "2018",
+        "stockinCount": "10000",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "34hhjk8",
+        "stockinTime": "20180410",
+        "upstreamorganizationCode": "123456",
+        "contractNo": "dsahkflj43794",
+        "goodsCode": "001001001001",
+        "IPFS": "Qmdsfhuoefonfsdnncnsjf",
+        "createdAt": "2018-04-11T05:33:23.832Z",
+        "updatedAt": "2018-04-11T05:33:23.832Z",
+        "id": "5acd9e23c8df950620674b2e"
+        }
+    ]
+}
+```
+<a id="/stockIn/find"></a>
+- [x] [回到顶部](#top)
+#### 4.查找入库信息
+##### 接口地址
+```
+POST /stockIn/find
+```
+##### 接口作用：
+
+```
+企业查找入库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"1234567"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "1234567",
+            "stockinidentificationCode": "123400100100100120180410",
+            "stockinNo": "shichangxue",
+            "variety": "小麦",
+            "grade": "二级",
+            "production": "黑龙江",
+            "producingYear": "2018",
+            "stockinCount": "10000",
+            "packing": "包装",
+            "carriageType": "汽车",
+            "carriageNo": "34hhjk8",
+            "stockinTime": "20180410",
+            "upstreamorganizationCode": "123456",
+            "contractNo": "dsahkflj43794",
+            "goodsCode": "001001001001",
+            "IPFS": "Qmdsfhuoefonfsdnncnsjf",
+            "createdAt": "2018-04-11T05:33:23.832Z",
+            "updatedAt": "2018-04-11T05:33:23.832Z",
+            "id": "5acd9e23c8df950620674b2e"
         }
     ]
 }
