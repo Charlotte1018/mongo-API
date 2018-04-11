@@ -61,6 +61,17 @@ http://47.95.252.170:1337/api
 - [x] 2.[企业客户删除](#/client/delete)
 - [x] 3.[企业客户更新](#/client/update)
 - [x] 4.[企业客户查找](#/client/find) 
+---
+六.入库管理
+- [x] 1.[企业添加入库信息](#/stockIn/add)
+- [x] 2.[企业删除入库信息](#/stockIn/delete)
+- [x] 3.[企业更新入库信息](#/stockIn/update)
+- [x] 4.[企业查找入库信息](#/stockIn/find) 
+- 出库管理
+- [x] 1.[企业添加出库信息](#/stockOut/add)
+- [x] 2.[企业删除出库信息](#/stockOut/delete)
+- [x] 3.[企业更新出库信息](#/stockOut/update)
+- [x] 4.[企业查找出库信息](#/stockOut/find) 
 
 
 
@@ -2373,7 +2384,7 @@ socialcreditCode|string|社会信用代码|Y
     ]
 }
 ```
-### 五.企业入库管理
+### 六.企业入库管理
 <a id="/stockIn/add"></a>
 - [x] [回到顶部](#top)
 #### 1.添加入库信息
@@ -2402,7 +2413,8 @@ packing|string|包装方式（枚举：包装，散装）|Y
 carriageType|string|运输类型（枚举：汽车，船舶）|Y
 carriageNo|string|车号／船号|Y
 stockinTime|string|入库时间|Y
-upstreamorganizationCode|string|下游企业社会信用代码|Y
+upstreamorganizationCode|string|上游企业社会信用代码|Y
+upstreamcompanyName|string|上游企业名称|Y
 contractNo|string|合同号|Y
 goodsCode|string|货位编码|Y
 IPFS|string|上传至ipfs的hash|Y
@@ -2422,6 +2434,7 @@ IPFS|string|上传至ipfs的hash|Y
 	"carriageNo":"34hhjk8",
 	"stockinTime":"20180410",
 	"upstreamorganizationCode":"123456",
+    "upstreamcompanyName":"百度",
 	"contractNo":"dsahkflj43794",
 	"goodsCode":"001001001001",
 	"IPFS":"Qmdsfhuoefonfsdnncnsjf"
@@ -2617,6 +2630,270 @@ socialcreditCode|string|社会信用代码|Y
             "createdAt": "2018-04-11T05:33:23.832Z",
             "updatedAt": "2018-04-11T05:33:23.832Z",
             "id": "5acd9e23c8df950620674b2e"
+        }
+    ]
+}
+```
+### 企业出库管理
+<a id="/stockOut/add"></a>
+- [x] [回到顶部](#top)
+#### 1.添加出库信息
+##### 接口地址
+```
+POST /stockOut/add
+```
+##### 接口作用：
+
+```
+企业添加出库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+stockoutNo|string|入库识别码|Y
+variety|string|种类|Y
+grade|string|等级|Y
+production|string|产地|Y
+producingYear|string|生产年份|Y
+stockoutCount|string|入库数量|Y
+packing|string|包装方式（枚举：包装，散装）|Y
+carriageType|string|运输类型（枚举：汽车，船舶）|Y
+carriageNo|string|车号／船号|Y
+stockoutTime|string|入库时间|Y
+carriage|string|运输企业社会信用代码|Y
+carriageName|string|运输企业名称|Y
+waybillNo|string|运单号|Y
+downstreamorganizationCode|string|下游企业社会信用代码|Y
+downstreamcompanyName|string|下游企业名称|Y
+contractNo|string|合同号|Y
+goodsCode|string|货位编码|Y
+IPFS|string|上传至ipfs的hash|Y
+##### input:
+```
+{
+	"socialcreditCode":"1234567",
+	"stockoutNo":"1234001001001001220180410",
+	"variety":"小麦",
+	"grade":"二级",
+	"production":"黑龙江",
+	"producingYear":"2018",
+	"stockoutCount":"10000",
+	"packing":"包装",
+	"carriageType":"汽车",
+	"carriageNo":"34hhjk8",
+	"stockoutTime":"20180410",
+	"carriage":"123456",
+	"carriageName":"dsahkflj43794",
+	"waybillNo":"123",
+	"downstreamorganizationCode":"001001001001",
+	"downstreamcompanyName":"Qmdsfhuoefonfsdnncnsjf",
+	"contractNo":"dsahkflj43794",
+	"goodsCode":"001001001001",
+    "IPFS":"dshkljauefsdg"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "1234567",
+        "stockoutNo": "1234001001001001220180410",
+        "variety": "小麦",
+        "grade": "二级",
+        "production": "黑龙江",
+        "producingYear": "2018",
+        "stockoutCount": "10000",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "34hhjk8",
+        "stockoutTime": "20180410",
+        "carriage": "123456",
+        "carriageName": "dsahkflj43794",
+        "waybillNo": "123",
+        "downstreamorganizationCode": "001001001001",
+        "downstreamcompanyName": "Qmdsfhuoefonfsdnncnsjf",
+        "contractNo": "dsahkflj43794",
+        "goodsCode": "001001001001",
+        "IPFS":"dshkljauefsdg",
+        "createdAt": "2018-04-11T05:59:00.616Z",
+        "updatedAt": "2018-04-11T05:59:00.616Z",
+        "id": "5acda424c8df950620674b2f"
+    }
+}
+```
+
+<a id="/stockOut/delete"></a>
+- [x] [回到顶部](#top)
+#### 2.删除出库信息
+##### 接口地址
+```
+POST /stockOut/delete
+```
+##### 接口作用：
+
+```
+企业删除出库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+
+##### input:
+```
+{
+  "id":"5acd946cc8df950620674b29"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+        "socialcreditCode": "1234567",
+        "stockoutNo": "1234001001001001220180410",
+        "variety": "小麦",
+        "grade": "二级",
+        "production": "黑龙江",
+        "producingYear": "2018",
+        "stockoutCount": "10000",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "34hhjk8",
+        "stockoutTime": "20180410",
+        "carriage": "123456",
+        "carriageName": "dsahkflj43794",
+        "waybillNo": "123",
+        "downstreamorganizationCode": "001001001001",
+        "downstreamcompanyName": "Qmdsfhuoefonfsdnncnsjf",
+        "contractNo": "dsahkflj43794",
+        "goodsCode": "001001001001",
+        "IPFS":"dshkljauefsdg",
+        "createdAt": "2018-04-11T05:59:00.616Z",
+        "updatedAt": "2018-04-11T05:59:00.616Z",
+        "id": "5acda424c8df950620674b2f"
+        }
+    ]
+}
+```
+
+<a id="/stockOut/update"></a>
+- [x] [回到顶部](#top)
+#### 3.更新出库信息
+##### 接口地址
+```
+POST /stockOut/update
+```
+##### 接口作用：
+
+```
+企业更新出库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+reservoirName|string|仓库名称|N
+
+##### input:
+```
+{
+  "id":"5acae874ae906d3604cdd3be",
+  "stockoutNo": "123"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+            "socialcreditCode": "1234567",
+            "stockoutNo": "1234001001001001220180410",
+            "variety": "小麦",
+            "grade": "一级",
+            "production": "黑龙江",
+            "producingYear": "2018",
+            "stockoutCount": "10000",
+            "packing": "包装",
+            "carriageType": "汽车",
+            "carriageNo": "34hhjk8",
+            "stockoutTime": "20180410",
+            "carriage": "123456",
+            "carriageName": "dsahkflj43794",
+            "waybillNo": "123",
+            "downstreamorganizationCode": "001001001001",
+            "downstreamcompanyName": "Qmdsfhuoefonfsdnncnsjf",
+            "contractNo": "dsahkflj43794",
+            "goodsCode": "001001001001",
+            "createdAt": "2018-04-11T05:59:00.616Z",
+            "updatedAt": "2018-04-11T06:12:47.615Z",
+            "id": "5acda424c8df950620674b2f"
+        }
+    ]
+}
+```
+<a id="/stockOut/find"></a>
+- [x] [回到顶部](#top)
+#### 4.查找出库信息
+##### 接口地址
+```
+POST /stockOut/find
+```
+##### 接口作用：
+
+```
+企业查找出库信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"1234567"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "1234567",
+            "stockoutNo": "1234001001001001220180410",
+            "variety": "小麦",
+            "grade": "二级",
+            "production": "黑龙江",
+            "producingYear": "2018",
+            "stockoutCount": "10000",
+            "packing": "包装",
+            "carriageType": "汽车",
+            "carriageNo": "34hhjk8",
+            "stockoutTime": "20180410",
+            "carriage": "123456",
+            "carriageName": "dsahkflj43794",
+            "waybillNo": "123",
+            "downstreamorganizationCode": "001001001001",
+            "downstreamcompanyName": "Qmdsfhuoefonfsdnncnsjf",
+            "contractNo": "dsahkflj43794",
+            "goodsCode": "001001001001",
+            "createdAt": "2018-04-11T05:59:00.616Z",
+            "updatedAt": "2018-04-11T05:59:00.616Z",
+            "id": "5acda424c8df950620674b2f"
         }
     ]
 }
