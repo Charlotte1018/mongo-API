@@ -1,3 +1,4 @@
+<a id="top"></a>
 > **粮食溯源数据库接口**
 ##### 基本接口地址：
 ```
@@ -54,7 +55,12 @@ http://47.95.252.170:1337/api
 - [x] 2.[货位删除](#/goods/delete)
 - [x] 3.[货位更新](#/goods/update)
 - [x] 4.[货位查找](#/goods/find) 
-
+---
+五.企业客户管理
+- [x] 1.[企业客户添加](#/client/add)
+- [x] 2.[企业客户删除](#/client/delete)
+- [x] 3.[企业客户更新](#/client/update)
+- [x] 4.[企业客户查找](#/client/find) 
 
 
 
@@ -62,6 +68,7 @@ http://47.95.252.170:1337/api
 
 ### 一.仓储企业
 <a id="storages_regregister"></a>
+- [x] [回到顶部](#top)
 ####  1.仓储企业注册
 ##### 接口地址：
 
@@ -132,6 +139,7 @@ status|string|注册状态|Y（此处默认填写“待审核”）
 }
 ```
 <a id="storages_delete"></a>
+- [x] [回到顶部](#top)
 ####  2.注销企业注册
 ##### 接口地址：
 
@@ -181,7 +189,9 @@ id|string|注册的ID|Y
     ]
 }
 ```
+
 <a id="storages_update"></a>
+- [x] [回到顶部](#top)
 ####  3.更改企业注册信息
 ##### 接口地址：
 
@@ -233,6 +243,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="storages_find"></a>
+- [x] [回到顶部](#top)
 ####  4.查找企业注册信息
 ##### 接口地址：
 
@@ -285,6 +296,7 @@ id|string|注册的ID|Y
 
 ### 二.加工企业
 <a id="processor_regregister"></a>
+- [x] [回到顶部](#top)
 ####  1.加工企业注册
 ##### 接口地址：
 
@@ -355,6 +367,7 @@ status|string|注册状态|Y（此处默认填写“待审核”）
 }
 ```
 <a id="processor_delete"></a>
+- [x] [回到顶部](#top)
 ####  2.注销企业注册
 ##### 接口地址：
 
@@ -405,6 +418,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="processor_update"></a>
+- [x] [回到顶部](#top)
 ####  3.更改企业注册信息
 ##### 接口地址：
 
@@ -456,6 +470,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="processor_find"></a>
+- [x] [回到顶部](#top)
 ####  4.查找企业注册信息
 ##### 接口地址：
 
@@ -508,6 +523,7 @@ id|string|注册的ID|Y
 
 ### 二.加工企业
 <a id="processor_regregister"></a>
+- [x] [回到顶部](#top)
 ####  1.加工企业注册
 ##### 接口地址：
 
@@ -578,6 +594,7 @@ status|string|注册状态|Y（此处默认填写“待审核”）
 }
 ```
 <a id="processor_delete"></a>
+- [x] [回到顶部](#top)
 ####  2.注销企业注册
 ##### 接口地址：
 
@@ -628,6 +645,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="processor_update"></a>
+- [x] [回到顶部](#top)
 ####  3.更改企业注册信息
 ##### 接口地址：
 
@@ -679,6 +697,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="processor_find"></a>
+- [x] [回到顶部](#top)
 ####  4.查找企业注册信息
 ##### 接口地址：
 
@@ -731,6 +750,7 @@ id|string|注册的ID|Y
 
 ### 三.物流企业
 <a id="carriage_regregister"></a>
+- [x] [回到顶部](#top)
 ####  1.加工企业注册
 ##### 接口地址：
 
@@ -801,6 +821,7 @@ status|string|注册状态|Y（此处默认填写“待审核”）
 }
 ```
 <a id="carriage_delete"></a>
+- [x] [回到顶部](#top)
 ####  2.注销企业注册
 ##### 接口地址：
 
@@ -851,6 +872,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="carriage_update"></a>
+- [x] [回到顶部](#top)
 ####  3.更改企业注册信息
 ##### 接口地址：
 
@@ -902,6 +924,7 @@ id|string|注册的ID|Y
 }
 ```
 <a id="carriage_find"></a>
+- [x] [回到顶部](#top)
 ####  4.查找企业注册信息
 ##### 接口地址：
 
@@ -953,6 +976,7 @@ id|string|注册的ID|Y
 ```
 ### 运力管理
 <a id="carriage/transport/add"></a>
+- [x] [回到顶部](#top)
 #### 1.添加运力
 ##### 接口地址
 ```
@@ -994,6 +1018,7 @@ carriageNo|string|运力牌号|Y
 }
 ```
 <a id="carriage/transport/delete"></a>
+- [x] [回到顶部](#top)
 #### 2.删除运力
 ##### 接口地址
 ```
@@ -1034,6 +1059,7 @@ id|string|编号|Y
 }
 ```
 <a id="carriage/transport/update"></a>
+- [x] [回到顶部](#top)
 #### 3.更新运力
 ##### 接口地址
 ```
@@ -1123,6 +1149,7 @@ carriageType|string|运力类型|N
 
 ### 司机管理
 <a id="carriage/driver/add"></a>
+- [x] [回到顶部](#top)
 #### 1.添加司机
 ##### 接口地址
 ```
@@ -1164,6 +1191,7 @@ driverTele|string|司机电话|Y
 }
 ```
 <a id="carriage/driver/delete"></a>
+- [x] [回到顶部](#top)
 #### 2.删除司机
 ##### 接口地址
 ```
@@ -1204,6 +1232,7 @@ id|string|编号|Y
 }
 ```
 <a id="carriage/driver/update"></a>
+- [x] [回到顶部](#top)
 #### 3.更新司机
 ##### 接口地址
 ```
@@ -1246,6 +1275,7 @@ carriageType|string|运力类型|N
 }
 ```
 <a id="carriage/driver/find"></a>
+- [x] [回到顶部](#top)
 #### 4.查找司机
 ##### 接口地址
 ```
@@ -1287,6 +1317,7 @@ socialcreditCode|string|社会信用代码|Y
 ```
 ### 四.库区管理
 <a id="/reservoir/add"></a>
+- [x] [回到顶部](#top)
 #### 1.添加库区
 ##### 接口地址
 ```
@@ -1347,6 +1378,7 @@ postalCode|string|邮政编码|Y
 ```
 
 <a id="/reservoir/delete"></a>
+- [x] [回到顶部](#top)
 #### 2.删除库区
 ##### 接口地址
 ```
@@ -1394,6 +1426,7 @@ id|string|删除编号|Y
 ```
 
 <a id="/reservoir/update"></a>
+- [x] [回到顶部](#top)
 #### 3.更新库区
 ##### 接口地址
 ```
@@ -1442,6 +1475,7 @@ reservoirName|string|库区名称|N
 }
 ```
 <a id="/reservoir/find"></a>
+- [x] [回到顶部](#top)
 #### 4.查找库区
 ##### 接口地址
 ```
@@ -1490,6 +1524,7 @@ socialcreditCode|string|社会信用代码|Y
 
 ### 仓库管理
 <a id="/stock/add"></a>
+- [x] [回到顶部](#top)
 #### 1.添加仓库
 ##### 接口地址
 ```
@@ -1548,6 +1583,7 @@ postalCode|string|邮政编码|Y
 ```
 
 <a id="/stock/delete"></a>
+- [x] [回到顶部](#top)
 #### 2.删除库区
 ##### 接口地址
 ```
@@ -1594,6 +1630,7 @@ id|string|删除编号|Y
 ```
 
 <a id="/stock/update"></a>
+- [x] [回到顶部](#top)
 #### 3.更新仓库
 ##### 接口地址
 ```
@@ -1641,6 +1678,7 @@ reservoirName|string|仓库名称|N
 }
 ```
 <a id="/stock/find"></a>
+- [x] [回到顶部](#top)
 #### 4.查找仓库
 ##### 接口地址
 ```
@@ -1688,6 +1726,7 @@ socialcreditCode|string|社会信用代码|Y
 
 ### 廒间管理
 <a id="/ao/add"></a>
+- [x] [回到顶部](#top)
 #### 1.添加廒间
 ##### 接口地址
 ```
@@ -1745,6 +1784,7 @@ capacity|string|容量|Y
 ```
 
 <a id="/ao/delete"></a>
+- [x] [回到顶部](#top)
 #### 2.删除廒间
 ##### 接口地址
 ```
@@ -1791,6 +1831,7 @@ id|string|删除编号|Y
 ```
 
 <a id="/ao/update"></a>
+- [x] [回到顶部](#top)
 #### 3.更新廒间
 ##### 接口地址
 ```
@@ -1838,6 +1879,7 @@ reservoirName|string|仓库名称|N
 }
 ```
 <a id="/ao/find"></a>
+- [x] [回到顶部](#top)
 #### 4.查找廒间
 ##### 接口地址
 ```
@@ -1885,6 +1927,7 @@ socialcreditCode|string|社会信用代码|Y
 
 ### 货位管理
 <a id="/goods/add"></a>
+- [x] [回到顶部](#top)
 #### 1.添加货位
 ##### 接口地址
 ```
@@ -1954,6 +1997,7 @@ capacity|string|容量|Y
 ```
 
 <a id="/goods/delete"></a>
+- [x] [回到顶部](#top)
 #### 2.删除货位
 ##### 接口地址
 ```
@@ -2004,6 +2048,7 @@ id|string|删除编号|Y
 ```
 
 <a id="/goods/update"></a>
+- [x] [回到顶部](#top)
 #### 3.更新货位
 ##### 接口地址
 ```
@@ -2055,6 +2100,7 @@ reservoirName|string|仓库名称|N
 }
 ```
 <a id="/goods/find"></a>
+- [x] [回到顶部](#top)
 #### 4.查找货位
 ##### 接口地址
 ```
@@ -2099,6 +2145,230 @@ socialcreditCode|string|社会信用代码|Y
             "createdAt": "2018-04-10T13:14:22.084Z",
             "updatedAt": "2018-04-10T13:14:22.084Z",
             "id": "5accb8aec8df950620674b24"
+        }
+    ]
+}
+```
+### 五.企业客户管理
+<a id="/client/add"></a>
+- [x] [回到顶部](#top)
+#### 1.添加客户
+##### 接口地址
+```
+POST /client/add
+```
+##### 接口作用：
+
+```
+企业添加客户
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+companysocialcreditCode|string|客户的社会信用代码|Y
+companyName|string|客户名称|Y
+province|string|省|Y
+city|string|城市|Y
+address|string|企业地址|Y
+lealPerson|string|法人代表|Y
+legalTele|string|法人代表联系电话|Y
+companyLinkman|string|企业联系人|Y
+companyTele|string|联系电话|Y
+email|string|邮箱|Y
+fax|string|传真|Y
+##### input:
+```
+{
+	"socialcreditCode":"1",
+	"companysocialcreditCode":"百度2",
+	"companyName":"百度2",
+	"province":"北京",
+	"city":"北京",
+	"address":"北京朝阳区",
+	"lealPerson":"时昌雪",
+	"legalTele":"18811715625",
+	"companyLinkman":"张翰臣",
+	"companyTele":"188116653748",
+	"email":"920189165@qq.com",
+	"fax":"123-47899"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "1",
+        "companysocialcreditCode": "百度2",
+        "companyName": "百度2",
+        "province": "北京",
+        "city": "北京",
+        "address": "北京朝阳区",
+        "lealPerson": "时昌雪",
+        "legalTele": "18811715625",
+        "companyLinkman": "张翰臣",
+        "companyTele": "188116653748",
+        "email": "920189165@qq.com",
+        "fax": "123-47899",
+        "createdAt": "2018-04-11T04:51:56.404Z",
+        "updatedAt": "2018-04-11T04:51:56.404Z",
+        "id": "5acd946cc8df950620674b29"
+    }
+}
+```
+
+<a id="/client/delete"></a>
+- [x] [回到顶部](#top)
+#### 2.删除客户
+##### 接口地址
+```
+POST /client/delete
+```
+##### 接口作用：
+
+```
+企业删除客户
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+
+##### input:
+```
+{
+  "id":"5acd946cc8df950620674b29"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "companysocialcreditCode": "百度2",
+            "companyName": "百度2",
+            "province": "北京",
+            "city": "北京",
+            "address": "北京朝阳区",
+            "lealPerson": "时昌雪",
+            "legalTele": "18811715625",
+            "companyLinkman": "张翰臣",
+            "companyTele": "188116653748",
+            "email": "920189165@qq.com",
+            "fax": "123-47899",
+            "createdAt": "2018-04-11T04:51:56.404Z",
+            "updatedAt": "2018-04-11T04:51:56.404Z",
+            "id": "5acd946cc8df950620674b29"
+        }
+    ]
+}
+```
+
+<a id="/client/update"></a>
+- [x] [回到顶部](#top)
+#### 3.更新客户
+##### 接口地址
+```
+POST /client/update
+```
+##### 接口作用：
+
+```
+企业更新客户
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+reservoirName|string|仓库名称|N
+
+##### input:
+```
+{
+  "id":"5acae874ae906d3604cdd3be",
+  "companysocialcreditCode": "百度"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "companysocialcreditCode": "百度",
+            "companyName": "百度2",
+            "province": "北京",
+            "city": "北京",
+            "address": "北京朝阳区",
+            "lealPerson": "时昌雪",
+            "legalTele": "18811715625",
+            "companyLinkman": "张翰臣",
+            "companyTele": "188116653748",
+            "email": "920189165@qq.com",
+            "fax": "123-47899",
+            "createdAt": "2018-04-11T05:00:49.284Z",
+            "updatedAt": "2018-04-11T05:01:09.269Z",
+            "id": "5acd9681c8df950620674b2a"
+        }
+    ]
+}
+```
+<a id="/client/find"></a>
+- [x] [回到顶部](#top)
+#### 4.查找客户
+##### 接口地址
+```
+POST /client/find
+```
+##### 接口作用：
+
+```
+企业查找客户
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"1"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "companysocialcreditCode": "百度2",
+            "companyName": "百度2",
+            "province": "北京",
+            "city": "北京",
+            "address": "北京朝阳区",
+            "lealPerson": "时昌雪",
+            "legalTele": "18811715625",
+            "companyLinkman": "张翰臣",
+            "companyTele": "188116653748",
+            "email": "920189165@qq.com",
+            "fax": "123-47899",
+            "createdAt": "2018-04-11T04:51:56.404Z",
+            "updatedAt": "2018-04-11T04:51:56.404Z",
+            "id": "5acd946cc8df950620674b29"
         }
     ]
 }
