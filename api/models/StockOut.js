@@ -52,8 +52,7 @@ module.exports = {
     },
     //运单号
     waybillNo: {
-      type: 'string',
-      unique: true
+      type: 'string'
     },
     //下游社会信用代码
     downstreamorganizationCode: {
