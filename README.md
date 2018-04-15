@@ -34,6 +34,11 @@ http://47.95.252.170:1337/api
 - [x] 2.[物流企业司机删除](#carriage/driver/delete)
 - [x] 3.[物流企业司机更新](#carriage/driver/update)
 - [x] 4.[物流企业司机查找](#carriage/driver/find) 
+- 物流信息管理
+- [x] 1.[物流企业司机添加](#carriage/carriageInfo/add)
+- [x] 2.[物流企业司机删除](#carriage/carriageInfo/delete)
+- [x] 3.[物流企业司机更新](#carriage/carriageInfo/update)
+- [x] 4.[物流企业司机查找](#carriage/carriageInfo/find) 
 ---
 四.库区管理
 - [x] 1.[企业库区添加](#/reservoir/add)
