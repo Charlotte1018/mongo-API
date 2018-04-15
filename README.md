@@ -78,7 +78,7 @@ http://47.95.252.170:1337/api
 - [x] 3.[企业更新出库信息](#/stockOut/update)
 - [x] 4.[企业查找出库信息](#/stockOut/find) 
 ---
-一.质检企业
+七.质检企业
 - [x] 1.[质检企业质检信息添加](#/QCInfo/add)
 - [x] 2.[质检企业质检信息删除](##/QCInfo/delete)
 - [x] 3.[质检企业质检信息更新](##/QCInfo/update)
@@ -3209,7 +3209,7 @@ socialcreditCode|string|社会信用代码|Y
 }
 ```
 
-### 质检信息管理
+### 七.质检信息管理
 <a id="/QCInfo/add"></a>
 - [x] [回到顶部](#top)
 #### 1.添加质检信息
@@ -3318,7 +3318,7 @@ isComplete|boolean|是否保存（true：之后不可编辑false（默认）：�
 ```
 <a id="/QCInfo/delete"></a>
 - [x] [回到顶部](#top)
-#### 1.删除质检信息
+#### 2.删除质检信息
 ##### 接口地址
 ```
 POST /QCInfo/delete
@@ -3378,7 +3378,7 @@ id|string|id|Y
 ```
 <a id="/QCInfo/update"></a>
 - [x] [回到顶部](#top)
-#### 1.更新质检信息
+#### 3.更新质检信息
 ##### 接口地址
 ```
 POST /QCInfo/update
@@ -3439,7 +3439,7 @@ id|string|id|Y
 ```
 <a id="/QCInfo/find"></a>
 - [x] [回到顶部](#top)
-#### 1.查找质检信息
+#### 4.查找质检信息
 ##### 接口地址
 ```
 POST /QCInfo/find
