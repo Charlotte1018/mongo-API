@@ -88,10 +88,48 @@ module.exports = {
     },
     find: (req, res) => {
         let params = req.query;
-        Goods.find(params || {}).exec((err, result) => {
-            if (err) return res.send(Message.messages(0, '查找失败！', err));
-            if (result.length === 0) return res.send(Message.messages(0, '查找失败！', result));
-            res.send(Message.messages(1, '查找成功', result));
+        let stockinParams = {
+            socialcreditCode: params.socialcreditCode,
+            goodsCode: params.goodsCode
+        }
+        // Goods.find(params || {}).exec((err, result) => {
+        //     if (err) return res.send(Message.messages(0, '查找失败！', err));
+        //     if (result.length === 0) return res.send(Message.messages(0, '查找失败！', result));
+        //     res.send(Message.messages(1, '查找成功', result));
+        // });
+        async.waterfall([(callback) => {
+            Goods.find(params || {}).exec((err, result) => {
+                if (err) callback(err);;
+                if (result.length === 0) {
+                    callback(null, []);
+                } else {
+                    callback(null, result);
+                }
+            });
+        }, (goodsInfo, callback) => {
+            if (goodsInfo.length !== 0) {
+                StockIn.find(stockinParams).exec((err, result) => {
+                    if (err) callback(err);
+                    if (result.length === 0) {
+                        callback(null, { goodsInfo, stockinInfo: [] });
+                    } else {
+                        callback(null, { goodsInfo, stockinInfo: result });
+                    }
+                });
+            } else {
+                callback(null, '查找失败');
+            }
+        }], (err, result) => {
+            console.log(result);
+            // res.send(Message.messages(1, '更新成功', result));
+            switch (result) {
+                case '查找失败':
+                    res.send(Message.messages(1, result, []));
+                    break;
+                default:
+                    res.send(Message.messages(1, '查找成功', result));
+                    break;
+            }
         });
     }
 };

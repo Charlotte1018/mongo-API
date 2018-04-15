@@ -2390,11 +2390,13 @@ POST /goods/find
 参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
 ---|---|---|---
 socialcreditCode|string|社会信用代码|Y
+goodsCode|string|货位编码|Y
 
 ##### input:
 ```
 {
-  "socialcreditCode":"1"
+  "socialcreditCode":"1",
+  "goodsCode":"001001001001"
 }
 ```
 ##### output:
@@ -2402,25 +2404,51 @@ socialcreditCode|string|社会信用代码|Y
 {
     "code": 1,
     "message": "查找成功",
-    "data": [
-        {
-            "socialcreditCode": "1",
-            "reservoirNo": "001",
-            "reservoirName": "库区1",
-            "stockNo": "001",
-            "stockName": "仓库1",
-            "aoNo": "001",
-            "aoName": "廒间1",
-            "goodsNo": "001",
-            "goodsName": "货位1",
-            "sealingMark": "20180408",
-            "goodsCode": "001001001",
-            "capacity": "200",
-            "createdAt": "2018-04-10T13:14:22.084Z",
-            "updatedAt": "2018-04-10T13:14:22.084Z",
-            "id": "5accb8aec8df950620674b24"
-        }
-    ]
+    "data": {
+        "goodsInfo": [
+            {
+                "socialcreditCode": "12345671",
+                "reservoirNo": "001",
+                "reservoirName": "库区1",
+                "stockNo": "001",
+                "stockName": "仓库1",
+                "aoNo": "001",
+                "aoName": "廒间1",
+                "goodsNo": "001",
+                "goodsName": "货位1",
+                "sealingMark": "20180408",
+                "goodsCode": "001001001001",
+                "capacity": "200",
+                "createdAt": "2018-04-15T07:54:09.750Z",
+                "updatedAt": "2018-04-15T07:54:09.750Z",
+                "id": "5ad3052104ca76686242a17b"
+            }
+        ],
+        "stockinInfo": [
+            {
+                "socialcreditCode": "12345671",
+                "stockinidentificationCode": "1234300100100100120180410",
+                "stockinNo": "shichangxue",
+                "variety": "小麦",
+                "grade": "二级",
+                "production": "黑龙江",
+                "producingYear": "2018",
+                "stockinCount": "10000",
+                "packing": "包装",
+                "carriageType": "汽车",
+                "carriageNo": "34hhjk8",
+                "stockinTime": "20180410",
+                "upstreamorganizationCode": "123456",
+                "upstreamcompanyName": "百度",
+                "contractNo": "dsahkflj43794",
+                "goodsCode": "001001001001",
+                "IPFS": "Qmdsfhuoefonfsdnncnsjf",
+                "createdAt": "2018-04-15T07:51:43.571Z",
+                "updatedAt": "2018-04-15T07:51:43.571Z",
+                "id": "5ad3048f04ca76686242a17a"
+            }
+        ]
+    }
 }
 ```
 ### 五.企业客户管理
