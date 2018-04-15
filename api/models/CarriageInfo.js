@@ -11,6 +11,9 @@ module.exports = {
     socialcreditCode: {
       type: 'string'
     },
+    companyName: {
+      type: 'string'
+    },
     //运单号
     waybillNo: {
       type: 'string',
@@ -64,6 +67,10 @@ module.exports = {
     },
     driverTele: {
       type: 'string'
+    },
+    inType: {
+      type: 'string',
+      enum: ['待办', '自主']
     }
   }
 };

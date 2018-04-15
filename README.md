@@ -1158,6 +1158,264 @@ carriageType|string|运力类型|N
 }
 ```
 
+### 物流信息登记管理
+<a id="carriage/carriageInfo/add"></a>
+- [x] [回到顶部](#top)
+#### 1.添加物流信息
+##### 接口地址
+```
+POST /carriage/carriageInfo/add
+```
+接口作用：
+
+```
+物流企业添加物流信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+companyName|enum|企业名称|Y
+waybillNo|string|运单号|Y
+carriageStatus|string|运单号|Y
+shipper|string|发货方(企业信用代码)|Y
+deliveryTime|string|发货时间|Y
+receiver|string|接受方(企业信用代码)|Y
+receiverTime|string|接收时间|Y
+contractNo|string|合同号|Y
+variety|string|品种|Y
+startCount|string|装车数量|Y
+endCount|string|卸车数量|Y
+packing|string|包装方式|Y
+carriageType|string|运力类型|Y
+carriageNo|string|船号／车号|Y
+driverName|string|司机姓名|Y
+driverTele|string|司机电话|Y
+inType|string|录入类型（枚举：待办，自主）|Y
+##### input:
+```
+{
+	"socialcreditCode":"123451",
+	"companyName":"京东",
+	"waybillNo":"12345611",
+	"carriageStatus":"在途",
+	"shipper":"123",
+	"deliveryTime":"20180410",
+	"receiver":"12345",
+	"receiverTime":"20180411",
+	"contractNo":"12345",
+	"variety":"12345",
+	"startCount":"12345",
+	"endCount":"12345",
+	"packing":"包装",
+	"carriageType":"汽车",
+	"carriageNo":"12345",
+	"driverName":"时昌雪",
+	"driverTele":"18811776463",
+	"inType":"自主"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "123451",
+        "companyName": "京东",
+        "waybillNo": "12345611",
+        "carriageStatus": "在途",
+        "shipper": "123",
+        "deliveryTime": "20180410",
+        "receiver": "12345",
+        "receiverTime": "20180411",
+        "contractNo": "12345",
+        "variety": "12345",
+        "startCount": "12345",
+        "endCount": "12345",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "12345",
+        "driverName": "时昌雪",
+        "driverTele": "18811776463",
+        "inType": "自主",
+        "createdAt": "2018-04-15T07:16:51.930Z",
+        "updatedAt": "2018-04-15T07:16:51.930Z",
+        "id": "5ad2fc63ee507c3d0430c003"
+    }
+}
+```
+<a id="carriage/carriageInfo/delete"></a>
+- [x] [回到顶部](#top)
+#### 2.删除登记信息
+##### 接口地址
+```
+POST /carriage/carriageInfo/delete
+```
+接口作用：
+
+```
+物流企业删除登记信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|编号|Y
+
+##### input:
+```
+{
+  "id":"5acad0a4f11587d9033e35c3"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+        "socialcreditCode": "123451",
+        "companyName": "京东",
+        "waybillNo": "12345611",
+        "carriageStatus": "在途",
+        "shipper": "123",
+        "deliveryTime": "20180410",
+        "receiver": "12345",
+        "receiverTime": "20180411",
+        "contractNo": "12345",
+        "variety": "12345",
+        "startCount": "12345",
+        "endCount": "12345",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "12345",
+        "driverName": "时昌雪",
+        "driverTele": "18811776463",
+        "inType": "自主",
+        "createdAt": "2018-04-15T07:16:51.930Z",
+        "updatedAt": "2018-04-15T07:16:51.930Z",
+        "id": "5ad2fc63ee507c3d0430c003"
+    }
+    ]
+}
+```
+<a id="carriage/carriageInfo/update"></a>
+- [x] [回到顶部](#top)
+#### 3.更新登记信息
+##### 接口地址
+```
+POST /carriage/carriageInfo/update
+```
+接口作用：
+
+```
+物流企业更新登记信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|编号|Y
+carriageType|string|运力类型|N
+
+##### input:
+```
+{
+  "id":"5acad351ae906d3604cdd3bc",
+  "driverName":"Lucy"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+        "socialcreditCode": "123451",
+        "companyName": "京东",
+        "waybillNo": "12345611",
+        "carriageStatus": "在途",
+        "shipper": "123",
+        "deliveryTime": "20180410",
+        "receiver": "12345",
+        "receiverTime": "20180411",
+        "contractNo": "12345",
+        "variety": "12345",
+        "startCount": "12345",
+        "endCount": "12345",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "12345",
+        "driverName": "Lucy",
+        "driverTele": "18811776463",
+        "inType": "自主",
+        "createdAt": "2018-04-15T07:16:51.930Z",
+        "updatedAt": "2018-04-15T07:16:51.930Z",
+        "id": "5ad2fc63ee507c3d0430c003"
+    }
+    ]
+}
+```
+<a id="carriage/carriageInfo/find"></a>
+- [x] [回到顶部](#top)
+#### 4.查找登记信息
+##### 接口地址
+```
+GET /carriage/carriageInfo/find
+```
+接口作用：
+
+```
+物流企业查找登记信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"2"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+        "socialcreditCode": "123451",
+        "companyName": "京东",
+        "waybillNo": "12345611",
+        "carriageStatus": "在途",
+        "shipper": "123",
+        "deliveryTime": "20180410",
+        "receiver": "12345",
+        "receiverTime": "20180411",
+        "contractNo": "12345",
+        "variety": "12345",
+        "startCount": "12345",
+        "endCount": "12345",
+        "packing": "包装",
+        "carriageType": "汽车",
+        "carriageNo": "12345",
+        "driverName": "Lucy",
+        "driverTele": "18811776463",
+        "inType": "自主",
+        "createdAt": "2018-04-15T07:16:51.930Z",
+        "updatedAt": "2018-04-15T07:16:51.930Z",
+        "id": "5ad2fc63ee507c3d0430c003"
+        }
+    ]
+}
+```
 ### 司机管理
 <a id="carriage/driver/add"></a>
 - [x] [回到顶部](#top)
@@ -2418,10 +2676,12 @@ upstreamcompanyName|string|上游企业名称|Y
 contractNo|string|合同号|Y
 goodsCode|string|货位编码|Y
 IPFS|string|上传至ipfs的hash|Y
+inType|string|办理入库类型（枚举：待办，自主）|Y
 ##### input:
 ```
 {
 	"socialcreditCode":"1234567",
+    "companyName": "百度",
 	"stockinidentificationCode":"123400100100100120180410",
 	"stockinNo":"shichangxue",
 	"variety":"小麦",
@@ -2437,7 +2697,8 @@ IPFS|string|上传至ipfs的hash|Y
     "upstreamcompanyName":"百度",
 	"contractNo":"dsahkflj43794",
 	"goodsCode":"001001001001",
-	"IPFS":"Qmdsfhuoefonfsdnncnsjf"
+	"IPFS":"Qmdsfhuoefonfsdnncnsjf",
+    "inType": "待办"
 }
 ```
 ##### output:
@@ -2447,6 +2708,7 @@ IPFS|string|上传至ipfs的hash|Y
     "message": "创建成功",
     "data": {
         "socialcreditCode": "1234567",
+        "companyName": "百度",
         "stockinidentificationCode": "123400100100100120180410",
         "stockinNo": "shichangxue",
         "variety": "小麦",
@@ -2461,10 +2723,10 @@ IPFS|string|上传至ipfs的hash|Y
         "upstreamorganizationCode": "123456",
         "contractNo": "dsahkflj43794",
         "goodsCode": "001001001001",
-        "IPFS": "Qmdsfhuoefonfsdnncnsjf",
-        "createdAt": "2018-04-11T05:33:23.832Z",
-        "updatedAt": "2018-04-11T05:33:23.832Z",
-        "id": "5acd9e23c8df950620674b2e"
+        "inType": "待办",
+        "createdAt": "2018-04-15T07:03:53.629Z",
+        "updatedAt": "2018-04-15T07:03:53.629Z",
+        "id": "5ad2f959b25de6ef0328dccd"
     }
 }
 ```
@@ -2597,6 +2859,7 @@ POST /stockIn/find
 参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
 ---|---|---|---
 socialcreditCode|string|社会信用代码|Y
+inType|string|入库类型（待办，自主）|Y
 
 ##### input:
 ```

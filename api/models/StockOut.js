@@ -11,6 +11,9 @@ module.exports = {
     socialcreditCode: {
       type: 'string'
     },
+    companyName: {
+      type: 'string'
+    },
     stockoutNo: {
       type: 'string'
     },
