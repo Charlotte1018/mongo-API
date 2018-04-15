@@ -2701,8 +2701,13 @@ production|string|产地|Y
 producingYear|string|生产年份|Y
 stockinCount|string|入库数量|Y
 packing|string|包装方式（枚举：包装，散装）|Y
+waybillNo|string|运单号|Y
+carriage|string|承运方的社会信用代码|Y
+carriageName|string|承运方的名称|Y
 carriageType|string|运输类型（枚举：汽车，船舶）|Y
 carriageNo|string|车号／船号|Y
+driverName|string|司机姓名|Y
+driverTele|string|司机电话|Y
 stockinTime|string|入库时间|Y
 upstreamorganizationCode|string|上游企业社会信用代码|Y
 upstreamcompanyName|string|上游企业名称|Y
@@ -2957,6 +2962,8 @@ stockoutCount|string|入库数量|Y
 packing|string|包装方式（枚举：包装，散装）|Y
 carriageType|string|运输类型（枚举：汽车，船舶）|Y
 carriageNo|string|车号／船号|Y
+driverName|string|司机姓名|Y
+driverTele|string|司机电话|Y
 stockoutTime|string|入库时间|Y
 carriage|string|运输企业社会信用代码|Y
 carriageName|string|运输企业名称|Y

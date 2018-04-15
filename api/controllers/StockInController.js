@@ -12,6 +12,10 @@ module.exports = {
             socialcreditCode: params.socialcreditCode,
             stockinNo: params.stockinNo
         }
+        let isExitParams2 = {
+            socialcreditCode: params.socialcreditCode,
+            goodsCode: params.goodsCode
+        }
         async.waterfall([(callback) => {
             StockIn.find(isExitParams1).exec((err, result) => {
                 if (err) return callback(err);
@@ -23,19 +27,45 @@ module.exports = {
             });
         }, (isExit, callback) => {
             if (!isExit) {
-                StockIn.create(params).exec((err, result) => {
+                StockIn.find(isExitParams2).exec((err, result) => {
                     if (err) return callback(err);
-                    callback(null, result);
-                })
+                    if (result.length) {
+                        callback(null, isExit, true);//有历史货位信息，去更新
+                    } else {
+                        callback(null, isExit, false);//没有历史货位信息，去插入
+                    }
+                });
             } else {
-                callback(null, isExit);
+                callback(null, isExit, '入库信息已添加，不入库登记');
             };
-        }], (err, result) => {
-            if (err) res.send(Message.messages(0, '创建失败！', err));
-            if (result === true) {
-                res.send(Message.messages(0, '创建失败！', []));
+        }, (isExit, isUpdate, callback) => {
+            if (!isExit) {
+                if (!isUpdate) {
+                    StockIn.create(params).exec((err, result) => {
+                        if (err) return callback(err);
+                        callback(null, isExit, isUpdate, result);
+                    })
+                } else {
+                    StockIn.update(isExitParams2, params).exec((err, result) => {
+                        if (err) return callback(err);
+                        callback(null, isExit, isUpdate, result);
+                    })
+                };
             } else {
-                res.send(Message.messages(1, '创建成功', result));
+                callback(null, isExit, isUpdate, []);
+            }
+
+        }], (err, isExit, isUpdate, result) => {
+            console.log(`isExit:'${isExit},isUpdate:'${isUpdate},result:'${result}`);
+            if (err) res.send(Message.messages(0, '创建失败！', err));
+            if (isExit) {
+                res.send(Message.messages(0, '入库信息已添加，不入库登记', result));
+            } else {
+                if (isUpdate) {
+                    res.send(Message.messages(1, '更新货位信息成功', result));
+                } else {
+                    res.send(Message.messages(1, '创建成功', result));
+                }
             }
         });
     },

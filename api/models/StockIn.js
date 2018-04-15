@@ -43,12 +43,30 @@ module.exports = {
       type: 'string',
       enum: ['包装', '散装']
     },
+    //运单号
+    waybillNo: {
+      type: 'string'
+    },
+    //承运方的社会信用代码
+    carriage: {
+      type: 'string'
+    },
+    //承运方的名称
+    carriageName: {
+      type: 'string'
+    },
     //运力类型
     carriageType: {
       type: 'string'
     },
     //车号／船号
     carriageNo: {
+      type: 'string'
+    },
+    driverName: {
+      type: 'string'
+    },
+    driverTele: {
       type: 'string'
     },
     stockinTime: {

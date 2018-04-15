@@ -45,6 +45,10 @@ module.exports = {
     stockoutTime: {
       type: 'string'
     },
+    //运单号
+    waybillNo: {
+      type: 'string'
+    },
     //承运方的社会信用代码
     carriage: {
       type: 'string'
@@ -53,8 +57,18 @@ module.exports = {
     carriageName: {
       type: 'string'
     },
-    //运单号
-    waybillNo: {
+    //运力类型
+    carriageType: {
+      type: 'string'
+    },
+    //车号／船号
+    carriageNo: {
+      type: 'string'
+    },
+    driverName: {
+      type: 'string'
+    },
+    driverTele: {
       type: 'string'
     },
     //下游社会信用代码
