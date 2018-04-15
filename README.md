@@ -80,9 +80,9 @@ http://47.95.252.170:1337/api
 ---
 七.质检企业
 - [x] 1.[质检企业质检信息添加](#/QCInfo/add)
-- [x] 2.[质检企业质检信息删除](##/QCInfo/delete)
-- [x] 3.[质检企业质检信息更新](##/QCInfo/update)
-- [x] 4.[质检企业质检信息查找](##/QCInfo/find)
+- [x] 2.[质检企业质检信息删除](#/QCInfo/delete)
+- [x] 3.[质检企业质检信息更新](#/QCInfo/update)
+- [x] 4.[质检企业质检信息查找](#/QCInfo/find)
 ---
 
 
