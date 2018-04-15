@@ -50,6 +50,14 @@ module.exports.routes = {
   'post /api/carriage/update': 'carriage.update',
   'get /api/carriage/find': 'carriage.find',
 
+
+  //质检企业产生报告
+  'post /api/QCInfo/add': 'QCInfo.add',
+  'post /api/QCInfo/delete': 'QCInfo.delete',
+  'post /api/QCInfo/update': 'QCInfo.update',
+  'get /api/QCInfo/find': 'QCInfo.find',
+
+
   //企业客户管理接口
   'post /api/client/add': 'client.add',
   'post /api/client/delete': 'client.delete',

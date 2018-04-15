@@ -77,6 +77,13 @@ http://47.95.252.170:1337/api
 - [x] 2.[企业删除出库信息](#/stockOut/delete)
 - [x] 3.[企业更新出库信息](#/stockOut/update)
 - [x] 4.[企业查找出库信息](#/stockOut/find) 
+---
+一.质检企业
+- [x] 1.[质检企业质检信息添加](#/QCInfo/add)
+- [x] 2.[质检企业质检信息删除](##/QCInfo/delete)
+- [x] 3.[质检企业质检信息更新](##/QCInfo/update)
+- [x] 4.[质检企业质检信息查找](##/QCInfo/find)
+---
 
 
 
@@ -3197,6 +3204,296 @@ socialcreditCode|string|社会信用代码|Y
             "createdAt": "2018-04-11T05:59:00.616Z",
             "updatedAt": "2018-04-11T05:59:00.616Z",
             "id": "5acda424c8df950620674b2f"
+        }
+    ]
+}
+```
+
+### 质检信息管理
+<a id="/QCInfo/add"></a>
+- [x] [回到顶部](#top)
+#### 1.添加质检信息
+##### 接口地址
+```
+POST /QCInfo/add
+```
+##### 接口作用：
+
+```
+质检企业添加货位质检信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+companyName|string|质检企业名称|Y
+checksocialcreditCode|string|抽检企业社会信用代码|Y
+checkcompanyName|string|抽检企业名称|Y
+checkgoodsCode|string|抽检货位编码|Y
+reportNumber|string|报告编号|Y
+taskSource|string|任务来源|Y
+sampleName|string|样品名称|Y
+sampleNo|string|样品编号|Y
+taskType|string|任务类型|Y
+client|json|委托单位|Y
+samplingInfo|json|抽样情况|Y
+sampleInfo|string|样品概况|Y
+sampleLog|string|抽样日志|Y
+reportDate|string|报告日期|Y
+testStandard|string|检验依据|Y
+testResult|string|检验结果|Y
+testConclusion|string|检验结论|Y
+instruction|string|说明|Y
+qualityIndex|json|质量指标|Y
+characterIndex|json|品质指标|Y
+healthIndex|json|品质指标|Y
+characterIndex|json|卫生指标|Y
+isComplete|boolean|是否保存（true：之后不可编辑false（默认）：不修改此字段，质检信息可编辑）|Y
+##### input:
+```
+{
+	"socialcreditCode":"1",
+	"companyName":"1",
+	"checksocialcreditCode":"1",
+	"checkcompanyName":"1",
+	"checkgoodsCode":"1",
+	"reportNumber":"1",
+	"taskSource":"1",
+	"sampleName":"1",
+	"sampleNo":"1",
+	"taskType":"1",
+	"client":{},
+	"samplingInfo":{"sampleMethod":"简单抽样","sampleDate":"2018-04-15"},
+	"sampleInfo":{},
+	"sampleLog":"1",
+	"reportDate":"1",
+	"testStandard":"1",
+	"testResult":"1",
+	"testConclusion":"1",
+	"instruction":"1",
+	"qualityIndex":{},
+	"characterIndex":{},
+	"healthIndex":{},
+	"isComplete":false
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "socialcreditCode": "1",
+        "companyName": "1",
+        "checksocialcreditCode": "1",
+        "checkcompanyName": "1",
+        "checkgoodsCode": "2",
+        "reportNumber": "1",
+        "taskSource": "1",
+        "sampleName": "1",
+        "sampleNo": "1",
+        "taskType": "1",
+        "client": {},
+        "samplingInfo": {
+            "sampleMethod": "简单抽样",
+            "sampleDate": "2018-04-15"
+        },
+        "sampleInfo": {},
+        "sampleLog": "1",
+        "reportDate": "1",
+        "testStandard": "1",
+        "testResult": "1",
+        "testConclusion": "1",
+        "instruction": "1",
+        "qualityIndex": {},
+        "characterIndex": {},
+        "healthIndex": {},
+        "isComplete": false,
+        "createdAt": "2018-04-15T12:25:55.530Z",
+        "updatedAt": "2018-04-15T12:25:55.530Z",
+        "id": "5ad344d3ba2ff5880b5d1abd"
+    }
+}
+```
+<a id="/QCInfo/delete"></a>
+- [x] [回到顶部](#top)
+#### 1.删除质检信息
+##### 接口地址
+```
+POST /QCInfo/delete
+```
+##### 接口作用：
+
+```
+质检企业删除货位质检信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|id|Y
+##### input:
+```
+{
+	"id":"5ad33f55bdddc0230b351819"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "companyName": "1",
+            "checksocialcreditCode": "1",
+            "checkcompanyName": "1",
+            "checkgoodsCode": "1",
+            "reportNumber": "1",
+            "taskSource": "1",
+            "sampleName": "1",
+            "sampleNo": "1",
+            "taskType": "1",
+            "client": {},
+            "samplingInfo": {},
+            "sampleInfo": {},
+            "sampleLog": "1",
+            "reportDate": "1",
+            "testStandard": "1",
+            "testResult": "1",
+            "testConclusion": "1",
+            "instruction": "1",
+            "qualityIndex": {},
+            "characterIndex": {},
+            "healthIndex": {},
+            "isComplete": false,
+            "createdAt": "2018-04-15T12:02:29.699Z",
+            "updatedAt": "2018-04-15T12:02:29.699Z",
+            "id": "5ad33f55bdddc0230b351819"
+        }
+    ]
+}
+```
+<a id="/QCInfo/update"></a>
+- [x] [回到顶部](#top)
+#### 1.更新质检信息
+##### 接口地址
+```
+POST /QCInfo/update
+```
+##### 接口作用：
+
+```
+质检企业更新货位质检信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|id|Y
+##### input:
+```
+{
+	"id":"5ad33f55bdddc0230b351819",
+    "":""(更新的字段)
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "companyName": "1",
+            "checksocialcreditCode": "1",
+            "checkcompanyName": "1",
+            "checkgoodsCode": "1",
+            "reportNumber": "1",
+            "taskSource": "1",
+            "sampleName": "1",
+            "sampleNo": "1",
+            "taskType": "1",
+            "client": {},
+            "samplingInfo": {},
+            "sampleInfo": {},
+            "sampleLog": "1",
+            "reportDate": "1",
+            "testStandard": "1",
+            "testResult": "1",
+            "testConclusion": "1",
+            "instruction": "1",
+            "qualityIndex": {},
+            "characterIndex": {},
+            "healthIndex": {},
+            "isComplete": false,
+            "createdAt": "2018-04-15T12:02:29.699Z",
+            "updatedAt": "2018-04-15T12:02:29.699Z",
+            "id": "5ad33f55bdddc0230b351819"
+        }
+    ]
+}
+```
+<a id="/QCInfo/find"></a>
+- [x] [回到顶部](#top)
+#### 1.查找质检信息
+##### 接口地址
+```
+POST /QCInfo/find
+```
+##### 接口作用：
+
+```
+质检企业查找货位质检信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+##### input:
+```
+{
+	"id":"5ad33f55bdddc0230b351819",
+    "":""(更新的字段)
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "1",
+            "companyName": "1",
+            "checksocialcreditCode": "1",
+            "checkcompanyName": "1",
+            "checkgoodsCode": "1",
+            "reportNumber": "1",
+            "taskSource": "1",
+            "sampleName": "1",
+            "sampleNo": "1",
+            "taskType": "1",
+            "client": {},
+            "samplingInfo": {},
+            "sampleInfo": {},
+            "sampleLog": "1",
+            "reportDate": "1",
+            "testStandard": "1",
+            "testResult": "1",
+            "testConclusion": "1",
+            "instruction": "1",
+            "qualityIndex": {},
+            "characterIndex": {},
+            "healthIndex": {},
+            "isComplete": false,
+            "createdAt": "2018-04-15T12:02:29.699Z",
+            "updatedAt": "2018-04-15T12:02:29.699Z",
+            "id": "5ad33f55bdddc0230b351819"
         }
     ]
 }
