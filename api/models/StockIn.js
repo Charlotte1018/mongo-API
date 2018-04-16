@@ -92,7 +92,7 @@ module.exports = {
     },
     inType: {
       type: 'string',
-      enum: ['待办，自主']
+      enum: ['待办', '自主']
     }
   }
 };
