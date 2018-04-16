@@ -7,12 +7,14 @@ http://47.95.252.170:1337/api
 ### 目录
 ---
 一.仓储企业
+- [x] 1.[仓储企业登录](#storages_login)
 - [x] 1.[仓储企业注册](#storages_regregister)
 - [x] 2.[仓储企业注销](#storages_delete)
 - [x] 3.[仓储企业更新](#storages_update)
 - [x] 4.[仓储企业查找](#storages_find)
 ---
 二.加工企业
+- [x] 1.[加工企业登录](#processor_login)
 - [x] 1.[加工企业注册](#processor_regregister)
 - [x] 2.[加工企业注销](#processor_delete)
 - [x] 3.[加工企业更新](#processor_update)
@@ -20,6 +22,7 @@ http://47.95.252.170:1337/api
 ---
 三.物流企业
 - 企业管理
+- [x] 1.[物流企业登录](#carriage_login)
 - [x] 1.[物流企业注册](#carriage_regregister)
 - [x] 2.[物流企业注销](#carriage_delete)
 - [x] 3.[物流企业更新](#carriage_update)
@@ -96,6 +99,57 @@ http://47.95.252.170:1337/api
 
 
 ### 一.仓储企业
+<a id="storages_login"></a>
+- [x] [回到顶部](#top)
+#### 仓储企业登录
+##### 接口地址：
+```
+POST /storages/login
+```
+接口作用：
+```
+仓储企业注册
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+companyName | string | 企业名称|Y
+password | string | 密码|Y
+
+##### input:
+```
+{
+    "companyName":"百度1",
+    "password":"password"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "登录成功！",
+    "data": [
+        {
+            "socialcreditCode": "xiamenjiagongB1234",
+            "companyName": "厦门加工企业B",
+            "organizationCode": "agongB123",
+            "password": "123456",
+            "companyType": "小麦加工企业",
+            "companyLinkman": "李小花",
+            "companyTele": "15678900987",
+            "address": "福建省厦门市",
+            "lealPerson": "刘明",
+            "legalID": "531819198707231829",
+            "legalTele": "13267890987",
+            "status": "待审核",
+            "createdAt": "2018-04-12T12:46:41.037Z",
+            "updatedAt": "2018-04-12T12:46:41.037Z",
+            "id": "5acf553102d3fd6a6f7afd5e"
+        }
+    ]
+}
+```
 <a id="storages_regregister"></a>
 - [x] [回到顶部](#top)
 ####  1.仓储企业注册
@@ -324,6 +378,57 @@ id|string|注册的ID|Y
 ```
 
 ### 二.加工企业
+<a id="processor_login"></a>
+- [x] [回到顶部](#top)
+#### 企业登录
+##### 接口地址：
+```
+POST /processor/login
+```
+接口作用：
+```
+仓储企业注册
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+companyName | string | 企业名称|Y
+password | string | 密码|Y
+
+##### input:
+```
+{
+    "companyName":"百度1",
+    "password":"password"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "登录成功！",
+    "data": [
+        {
+            "socialcreditCode": "xiamenjiagongB1234",
+            "companyName": "厦门加工企业B",
+            "organizationCode": "agongB123",
+            "password": "123456",
+            "companyType": "小麦加工企业",
+            "companyLinkman": "李小花",
+            "companyTele": "15678900987",
+            "address": "福建省厦门市",
+            "lealPerson": "刘明",
+            "legalID": "531819198707231829",
+            "legalTele": "13267890987",
+            "status": "待审核",
+            "createdAt": "2018-04-12T12:46:41.037Z",
+            "updatedAt": "2018-04-12T12:46:41.037Z",
+            "id": "5acf553102d3fd6a6f7afd5e"
+        }
+    ]
+}
+```
 <a id="processor_regregister"></a>
 - [x] [回到顶部](#top)
 ####  1.加工企业注册
@@ -778,6 +883,57 @@ id|string|注册的ID|Y
 ```
 
 ### 三.物流企业
+<a id="carriage_login"></a>
+- [x] [回到顶部](#top)
+#### 企业登录
+##### 接口地址：
+```
+POST /carriage/login
+```
+接口作用：
+```
+仓储企业注册
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+companyName | string | 企业名称|Y
+password | string | 密码|Y
+
+##### input:
+```
+{
+    "companyName":"百度1",
+    "password":"password"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "登录成功！",
+    "data": [
+        {
+            "socialcreditCode": "xiamenjiagongB1234",
+            "companyName": "厦门加工企业B",
+            "organizationCode": "agongB123",
+            "password": "123456",
+            "companyType": "小麦加工企业",
+            "companyLinkman": "李小花",
+            "companyTele": "15678900987",
+            "address": "福建省厦门市",
+            "lealPerson": "刘明",
+            "legalID": "531819198707231829",
+            "legalTele": "13267890987",
+            "status": "待审核",
+            "createdAt": "2018-04-12T12:46:41.037Z",
+            "updatedAt": "2018-04-12T12:46:41.037Z",
+            "id": "5acf553102d3fd6a6f7afd5e"
+        }
+    ]
+}
+```
 <a id="carriage_regregister"></a>
 - [x] [回到顶部](#top)
 ####  1.加工企业注册
