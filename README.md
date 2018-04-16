@@ -60,6 +60,12 @@ http://47.95.252.170:1337/api
 - [x] 2.[货位删除](#/goods/delete)
 - [x] 3.[货位更新](#/goods/update)
 - [x] 4.[货位查找](#/goods/find) 
+
+- 货位粮食信息管理
+- [x] 1.[货位粮食信息添加](#/goodsInfo/add)
+- [x] 2.[货位粮食信息删除](#/goodsInfo/delete)
+- [x] 3.[货位粮食信息更新](#/goodsInfo/update)
+- [x] 4.[货位粮食信息查找](#/goodsInfo/find) 
 ---
 五.企业客户管理
 - [x] 1.[企业客户添加](#/client/add)
@@ -2234,7 +2240,7 @@ goodsNo|string|货位号|Y
 goodsName|string|货位名称|Y
 sealingMark|string|封仓时间|Y
 goodsCode|string|货位编码|Y
-capacity|string|容量|Y
+capacity|integer|容量|Y
 ##### input:
 ```
 {
@@ -2456,6 +2462,235 @@ goodsCode|string|货位编码|Y
             }
         ]
     }
+}
+```
+### 货位管理
+<a id="/goods/add"></a>
+- [x] [回到顶部](#top)
+#### 1.添加货位
+##### 接口地址
+```
+POST /goods/add
+```
+##### 接口作用：
+
+```
+物流企业添加货位
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+companyName|string|企业名称|Y
+goodsCode|string|货位编码|Y
+variety|string|品种|Y
+grade|string|等级|Y
+production|string|产地|Y
+producingYear|string|生产年份|Y
+packing|string|包装方式|Y
+capacity|integer|容量|Y
+##### input:
+```
+{
+  "socialcreditCode":"12345671",
+  "companyName":"baidu",
+  "goodsCode":"001001001001",
+  "variety":"小麦",
+  "grade":"二级",
+  "production":"哈尔滨",
+  "producingYear":"2018",
+  "packing":"包装",
+  "capacity":100
+}
+```
+##### output:（若当前货位有粮食就更新，没有就新建）
+```
+{
+    "code": 1,
+    "message": "更新货位信息成功",
+    "data": {
+        "preGoodsInfo": [
+            {
+                "socialcreditCode": "12345671",
+                "companyName": "baidu",
+                "goodsCode": "001001001001",
+                "variety": "小麦",
+                "grade": "二级",
+                "production": "哈尔滨",
+                "producingYear": "2018",
+                "packing": "包装",
+                "capacity": 500,
+                "createdAt": "2018-04-16T03:40:31.413Z",
+                "updatedAt": "2018-04-16T03:54:44.835Z",
+                "id": "5ad41b2f85d4970c0774ae2d"
+            }
+        ],
+        "currentGoodsInfo": [
+            {
+                "socialcreditCode": "12345671",
+                "companyName": "baidu",
+                "goodsCode": "001001001001",
+                "variety": "小麦",
+                "grade": "二级",
+                "production": "哈尔滨",
+                "producingYear": "2018",
+                "packing": "包装",
+                "capacity": 600,
+                "createdAt": "2018-04-16T03:40:31.413Z",
+                "updatedAt": "2018-04-16T04:00:07.030Z",
+                "id": "5ad41b2f85d4970c0774ae2d"
+            }
+        ]
+    }
+}
+```
+
+<a id="/goodsInfo/delete"></a>
+- [x] [回到顶部](#top)
+#### 2.删除货位粮食信息
+##### 接口地址
+```
+POST /goodsInfo/delete
+```
+##### 接口作用：
+
+```
+物流企业删除货位粮食信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+
+##### input:
+```
+{
+  "id":"5accb7c0e2957fe40f231b66"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "删除成功",
+    "data": [
+        {
+            "socialcreditCode": "12345671",
+            "companyName": "baidu",
+            "goodsCode": "001001001001",
+            "variety": "小麦",
+            "grade": "二级",
+            "production": "黑龙江",
+            "producingYear": "2019",
+            "packing": "包装",
+            "capacity": 100,
+            "createdAt": "2018-04-16T03:40:31.413Z",
+            "updatedAt": "2018-04-16T04:21:44.476Z",
+            "id": "5ad41b2f85d4970c0774ae2d"
+        }
+    ]
+}
+```
+
+<a id="/goodsInfo/update"></a>
+- [x] [回到顶部](#top)
+#### 3.更新货位粮食信息
+##### 接口地址
+```
+POST /goodsInfo/update
+```
+##### 接口作用：
+
+```
+物流企业更新货位粮食信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+id|string|删除编号|Y
+reservoirName|string|仓库名称|N
+
+##### input:
+```
+{
+  "id":"5ad41b2f85d4970c0774ae2d",
+  "socialcreditCode":"12345671",
+  "capacity":100
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "更新成功",
+    "data": [
+        {
+            "socialcreditCode": "12345671",
+            "companyName": "baidu",
+            "goodsCode": "001001001001",
+            "variety": "小麦",
+            "grade": "二级",
+            "production": "黑龙江",
+            "producingYear": "2019",
+            "packing": "包装",
+            "capacity": 100,
+            "createdAt": "2018-04-16T03:40:31.413Z",
+            "updatedAt": "2018-04-16T04:21:44.476Z",
+            "id": "5ad41b2f85d4970c0774ae2d"
+        }
+    ]
+}
+```
+<a id="/goodsInfo/find"></a>
+- [x] [回到顶部](#top)
+#### 4.查找货位粮食信息
+##### 接口地址
+```
+POST /goodsInfo/find
+```
+##### 接口作用：
+
+```
+物流企业查找货位粮食信息
+```
+接口参数
+
+参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
+---|---|---|---
+socialcreditCode|string|社会信用代码|Y
+goodsCode|string|货位编码|Y
+
+##### input:
+```
+{
+  "socialcreditCode":"12345671",
+  "goodsCode":"001001001001"
+}
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "查找成功",
+    "data": [
+        {
+            "socialcreditCode": "12345671",
+            "companyName": "baidu",
+            "goodsCode": "001001001001",
+            "variety": "小麦",
+            "grade": "二级",
+            "production": "哈尔滨",
+            "producingYear": "2018",
+            "packing": "包装",
+            "capacity": 600,
+            "createdAt": "2018-04-16T03:40:31.413Z",
+            "updatedAt": "2018-04-16T04:00:07.030Z",
+            "id": "5ad41b2f85d4970c0774ae2d"
+        }
+    ]
 }
 ```
 ### 五.企业客户管理
@@ -2706,7 +2941,7 @@ variety|string|种类|Y
 grade|string|等级|Y
 production|string|产地|Y
 producingYear|string|生产年份|Y
-stockinCount|string|入库数量|Y
+stockinCount|integer|入库数量|Y
 packing|string|包装方式（枚举：包装，散装）|Y
 waybillNo|string|运单号|Y
 carriage|string|承运方的社会信用代码|Y

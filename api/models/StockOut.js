@@ -30,7 +30,7 @@ module.exports = {
       type: 'string'
     },
     stockoutCount: {
-      type: 'string'
+      type: 'integer'
     },
     packing: {
       type: 'string',

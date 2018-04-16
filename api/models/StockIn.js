@@ -37,7 +37,7 @@ module.exports = {
     },
     //入库数量
     stockinCount: {
-      type: 'string'
+      type: 'integer'
     },
     packing: {
       type: 'string',
