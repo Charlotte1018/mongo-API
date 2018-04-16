@@ -93,6 +93,9 @@ http://47.95.252.170:1337/api
 - [x] 3.[质检企业质检信息更新](#/QCInfo/update)
 - [x] 4.[质检企业质检信息查找](#/QCInfo/find)
 ---
+八.监管企业
+- [x] 4.[注册企业信息查找](#/supervise/find)
+---
 
 
 
@@ -3943,5 +3946,328 @@ socialcreditCode|string|社会信用代码|Y
             "id": "5ad33f55bdddc0230b351819"
         }
     ]
+}
+```
+### 八.监管企业
+<a id="/supervise/find"></a>
+- [x] [回到顶部](#top)
+#### 查询所有企业
+##### 接口地址：
+```
+POST /supervise/login
+```
+接口作用：
+```
+查询所有企业注册的信息
+```
+##### output:
+```
+{
+    "code": 1,
+    "message": "注册企业信息",
+    "data": {
+        "carriage": [
+            {
+                "socialcreditCode": "fuzhouwuliua123456",
+                "companyName": "福州物流企业A",
+                "organizationCode": "liua12345",
+                "password": "123456",
+                "companyType": "运输企业",
+                "companyLinkman": "王二",
+                "companyTele": "18811391890",
+                "address": "福建省福州市",
+                "lealPerson": "张三",
+                "legalID": "531819198706171829",
+                "legalTele": "13267890987",
+                "status": "待审核",
+                "createdAt": "2018-04-11T06:18:04.033Z",
+                "updatedAt": "2018-04-11T06:18:04.033Z",
+                "id": "5acda89cc8df950620674b31"
+            },
+            {
+                "socialcreditCode": "sanmingwuliuA12345",
+                "companyName": "三明物流企业A",
+                "organizationCode": "uliuA1234",
+                "password": "123456",
+                "companyType": "运输企业",
+                "companyLinkman": "李四",
+                "companyTele": "18811391890",
+                "address": "福建省三明市",
+                "lealPerson": "张三",
+                "legalID": "531819198706171829",
+                "legalTele": "13516789098",
+                "status": "待审核",
+                "createdAt": "2018-04-11T07:19:22.276Z",
+                "updatedAt": "2018-04-11T07:19:22.276Z",
+                "id": "5acdb6fac8df950620674b3c"
+            },
+            {
+                "socialcreditCode": "fuzhouwuliuB123456",
+                "companyName": "福州物流企业B",
+                "organizationCode": "liuB12345",
+                "password": "123456",
+                "companyType": "运输企业",
+                "companyLinkman": "李四",
+                "companyTele": "18811391890",
+                "address": "福建省福州市",
+                "lealPerson": "张三",
+                "legalID": "531819198706171829",
+                "legalTele": "13516789098",
+                "status": "待审核",
+                "createdAt": "2018-04-11T07:55:07.103Z",
+                "updatedAt": "2018-04-11T07:55:07.103Z",
+                "id": "5acdbf5bbe54251c4cd02c8f"
+            },
+            {
+                "socialcreditCode": "xiamenwuliuA123456",
+                "companyName": "厦门物流企业A",
+                "organizationCode": "liuA12345",
+                "password": "123456",
+                "companyType": "运输企业",
+                "companyLinkman": "李四",
+                "companyTele": "18811391890",
+                "address": "福建省厦门市",
+                "lealPerson": "张三",
+                "legalID": "531819198706171829",
+                "legalTele": "13516789098",
+                "status": "待审核",
+                "createdAt": "2018-04-11T10:42:43.136Z",
+                "updatedAt": "2018-04-11T10:42:43.136Z",
+                "id": "5acde6a3be54251c4cd02c98"
+            },
+            {
+                "socialcreditCode": "xiamenyunshuB12345",
+                "companyName": "厦门运输企业B",
+                "organizationCode": "nshuB1234",
+                "password": "123456",
+                "companyType": "运输企业",
+                "companyLinkman": "李敬",
+                "companyTele": "15910765432",
+                "address": "福建省厦门市",
+                "lealPerson": "王磊",
+                "legalID": "531819198306171829",
+                "legalTele": "13817098765",
+                "status": "待审核",
+                "createdAt": "2018-04-12T12:48:14.802Z",
+                "updatedAt": "2018-04-12T12:48:14.802Z",
+                "id": "5acf558e02d3fd6a6f7afd5f"
+            },
+            {
+                "socialcreditCode": "quanzhouyunshuC123",
+                "companyName": "泉州运输企业A",
+                "organizationCode": "yunshuC12",
+                "password": "123456",
+                "companyType": "运输企业",
+                "companyLinkman": "李军",
+                "companyTele": "18617895431",
+                "address": "福建省泉州市",
+                "lealPerson": "冯清远",
+                "legalID": "531819198706171829",
+                "legalTele": "13910651342",
+                "status": "待审核",
+                "createdAt": "2018-04-16T11:55:35.906Z",
+                "updatedAt": "2018-04-16T11:55:35.906Z",
+                "id": "5ad48f371539e13aaed43453"
+            }
+        ],
+        "processor": [
+            {
+                "socialcreditCode": "1",
+                "companyName": "百度1",
+                "organizationCode": "百度1",
+                "password": "password",
+                "companyType": "companyType",
+                "companyLinkman": "123343",
+                "companyTele": "organizationCode",
+                "address": "百度3",
+                "lealPerson": "123343",
+                "legalID": "organizationCode",
+                "legalTele": "百度3",
+                "status": "待审核",
+                "createdAt": "2018-04-11T05:22:41.561Z",
+                "updatedAt": "2018-04-11T05:22:41.561Z",
+                "id": "5acd9ba1c8df950620674b2c"
+            },
+            {
+                "code": 1,
+                "message": "创建成功！",
+                "data": {
+                    "socialcreditCode": "1",
+                    "companyName": "美团",
+                    "organizationCode": "美团",
+                    "password": "password",
+                    "companyType": "companyType",
+                    "companyLinkman": "123343",
+                    "companyTele": "organizationCode",
+                    "address": "望京",
+                    "lealPerson": "123343",
+                    "legalID": "organizationCode",
+                    "legalTele": "美团",
+                    "status": "待审核",
+                    "createdAt": "2018-04-11T05:22:41.561Z",
+                    "updatedAt": "2018-04-11T05:22:41.561Z",
+                    "id": "5acd9ba12345650620674b2c"
+                },
+                "createdAt": "2018-04-11T05:24:32.867Z",
+                "updatedAt": "2018-04-11T05:24:32.867Z",
+                "id": "5acd9c10c8df950620674b2d"
+            },
+            {
+                "socialcreditCode": "sanmingjiagongA123",
+                "companyName": "福州加工企业A",
+                "organizationCode": "iagongA12",
+                "password": "123456",
+                "companyType": "小麦加工企业",
+                "companyLinkman": "张华",
+                "companyTele": "13567893456",
+                "address": "福建省三明市",
+                "lealPerson": "李静",
+                "legalID": "531819198706171829",
+                "legalTele": "18818906543",
+                "status": "待审核",
+                "createdAt": "2018-04-12T12:17:13.138Z",
+                "updatedAt": "2018-04-12T12:17:13.138Z",
+                "id": "5acf4e4902d3fd6a6f7afd54"
+            },
+            {
+                "socialcreditCode": "xiamenjiagongB1234",
+                "companyName": "厦门加工企业B",
+                "organizationCode": "agongB123",
+                "password": "123456",
+                "companyType": "小麦加工企业",
+                "companyLinkman": "李小花",
+                "companyTele": "15678900987",
+                "address": "福建省厦门市",
+                "lealPerson": "刘明",
+                "legalID": "531819198707231829",
+                "legalTele": "13267890987",
+                "status": "待审核",
+                "createdAt": "2018-04-12T12:46:41.037Z",
+                "updatedAt": "2018-04-12T12:46:41.037Z",
+                "id": "5acf553102d3fd6a6f7afd5e"
+            },
+            {
+                "socialcreditCode": "quanzhoujiagongB12",
+                "companyName": "泉州加工企业B",
+                "organizationCode": "jiagongB1",
+                "password": "123456",
+                "companyType": "大米加工企业",
+                "companyLinkman": "张云龙",
+                "companyTele": "13516741321",
+                "address": "福建省泉州市",
+                "lealPerson": "杨乐",
+                "legalID": "531819198706171829",
+                "legalTele": "18817895643",
+                "status": "待审核",
+                "createdAt": "2018-04-16T11:53:57.720Z",
+                "updatedAt": "2018-04-16T11:53:57.720Z",
+                "id": "5ad48ed51539e13aaed43452"
+            }
+        ],
+        "storages": [
+            {
+                "socialcreditCode": "12",
+                "companyName": "百度2",
+                "organizationCode": "百度2",
+                "password": "123",
+                "companyType": "companyType",
+                "companyLinkman": "123343",
+                "companyTele": "organizationCode",
+                "address": "百度3",
+                "lealPerson": "123343",
+                "legalID": "organizationCode",
+                "legalTele": "百度3",
+                "status": "待审核",
+                "createdAt": "2018-04-10T12:47:25.727Z",
+                "updatedAt": "2018-04-10T12:47:25.727Z",
+                "id": "5accb25dc8df950620674b20"
+            },
+            {
+                "socialcreditCode": "1",
+                "companyName": "百度1",
+                "organizationCode": "百度1",
+                "password": "password",
+                "companyType": "companyType",
+                "companyLinkman": "123343",
+                "companyTele": "organizationCode",
+                "address": "百度3",
+                "lealPerson": "123343",
+                "legalID": "organizationCode",
+                "legalTele": "百度3",
+                "status": "待审核",
+                "createdAt": "2018-04-11T05:20:18.759Z",
+                "updatedAt": "2018-04-11T05:20:18.759Z",
+                "id": "5acd9b12c8df950620674b2b"
+            },
+            {
+                "socialcreditCode": "fuzhoucangchuA1234",
+                "companyName": "福州仓储企业A",
+                "organizationCode": "ngchuA123",
+                "password": "123456",
+                "companyType": "仓储企业",
+                "companyLinkman": "李四",
+                "companyTele": "18811391890",
+                "address": "福建省福州市",
+                "lealPerson": "张三",
+                "legalID": "531819198706171829",
+                "legalTele": "13516789098",
+                "status": "待审核",
+                "createdAt": "2018-04-11T07:46:32.347Z",
+                "updatedAt": "2018-04-11T07:46:32.347Z",
+                "id": "5acdbd58be54251c4cd02c8d"
+            },
+            {
+                "socialcreditCode": "fuzhoucangchuB1234",
+                "companyName": "福州仓储企业B",
+                "organizationCode": "ngchuB123",
+                "password": "123456",
+                "companyType": "仓储企业",
+                "companyLinkman": "李四",
+                "companyTele": "18811391890",
+                "address": "福建省福州市",
+                "lealPerson": "张三",
+                "legalID": "531819198706171829",
+                "legalTele": "13516789098",
+                "status": "待审核",
+                "createdAt": "2018-04-11T07:53:48.650Z",
+                "updatedAt": "2018-04-11T07:53:48.650Z",
+                "id": "5acdbf0cbe54251c4cd02c8e"
+            },
+            {
+                "socialcreditCode": "xiamencangchuB4321",
+                "companyName": "厦门仓储企业B",
+                "organizationCode": "ngchuB432",
+                "password": "123456",
+                "companyType": "仓储企业",
+                "companyLinkman": "李先云",
+                "companyTele": "18811391890",
+                "address": "福建省厦门市",
+                "lealPerson": "张文文",
+                "legalID": "532189198505161890",
+                "legalTele": "18818906543",
+                "status": "待审核",
+                "createdAt": "2018-04-12T12:44:50.938Z",
+                "updatedAt": "2018-04-12T12:44:50.938Z",
+                "id": "5acf54c202d3fd6a6f7afd5d"
+            },
+            {
+                "socialcreditCode": "quanzhoucangchuA12",
+                "companyName": "泉州仓储企业A",
+                "organizationCode": "cangchuA1",
+                "password": "123456",
+                "companyType": "仓储企业",
+                "companyLinkman": "王勇",
+                "companyTele": "13267891456",
+                "address": "福建省泉州市",
+                "lealPerson": "李贤禹",
+                "legalID": "531819198706171829",
+                "legalTele": "15617891455",
+                "status": "待审核",
+                "createdAt": "2018-04-16T11:51:39.066Z",
+                "updatedAt": "2018-04-16T11:51:39.066Z",
+                "id": "5ad48e4b1539e13aaed43451"
+            }
+        ]
+    }
 }
 ```

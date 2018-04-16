@@ -53,6 +53,8 @@ module.exports.routes = {
   'post /api/carriage/update': 'carriage.update',
   'get /api/carriage/find': 'carriage.find',
 
+  //监管企业接口
+  'get /api/supervise/find': 'Supervise.find',
 
   //质检企业产生报告
   'post /api/QCInfo/add': 'QCInfo.add',
