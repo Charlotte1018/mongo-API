@@ -6,6 +6,20 @@
  */
 
 module.exports = {
+    //登录
+    login: (req, res) => {
+        let params = req.body;
+        let userInfo = {
+            companyName: params.companyName
+        }
+        Processor.find(userInfo).exec((err, result) => {
+            if (err) return res.send(Message.messages(0, '登录失败', err))
+            if (!result.length) return res.send(Message.messages(0, '您还未注册！', result));
+            if (params.password === result[0].password) {
+                res.send(Message.messages(1, '登录成功！', result));
+            }
+        })
+    },
     //增加
     register: function (req, res) {
         let params = req.body;

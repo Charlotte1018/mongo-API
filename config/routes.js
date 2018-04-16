@@ -33,18 +33,21 @@ module.exports.routes = {
   ***************************************************************************/
 
   //加工企业接口
+  'post /api/processor/login': 'processor.login',
   'post /api/processor/register': 'processor.register',
   'post /api/processor/delete': 'processor.delete',
   'post /api/processor/update': 'processor.update',
   'get /api/processor/find': 'processor.find',
 
   //仓储企业接口
+  'post /api/storages/login': 'storages.login',
   'post /api/storages/register': 'storages.register',
   'post /api/storages/delete': 'storages.delete',
   'post /api/storages/update': 'storages.update',
   'get /api/storages/find': 'storages.find',
 
   //物流运输企业接口
+  'post /api/carriage/login': 'carriage.login',
   'post /api/carriage/register': 'carriage.register',
   'post /api/carriage/delete': 'carriage.delete',
   'post /api/carriage/update': 'carriage.update',
