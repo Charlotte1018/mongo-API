@@ -2403,13 +2403,10 @@ POST /goods/find
 参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
 ---|---|---|---
 socialcreditCode|string|社会信用代码|Y
-goodsCode|string|货位编码|Y
-
 ##### input:
 ```
 {
   "socialcreditCode":"1",
-  "goodsCode":"001001001001"
 }
 ```
 ##### output:
