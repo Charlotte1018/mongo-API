@@ -2418,59 +2418,118 @@ goodsCode|string|货位编码|Y
     "code": 1,
     "message": "查找成功",
     "data": {
-        "goodsInfo": [
+        "goods": [
             {
-                "socialcreditCode": "12345671",
+                "socialcreditCode": "xiamenjiagongB1234",
                 "reservoirNo": "001",
-                "reservoirName": "库区1",
-                "stockNo": "001",
-                "stockName": "仓库1",
+                "reservoirName": "库区001",
+                "stockNo": "P01",
+                "stockName": "平房仓P01",
                 "aoNo": "001",
-                "aoName": "廒间1",
-                "goodsNo": "001",
-                "goodsName": "货位1",
-                "sealingMark": "20180408",
-                "goodsCode": "001001001001",
-                "capacity": "200",
-                "createdAt": "2018-04-15T07:54:09.750Z",
-                "updatedAt": "2018-04-15T07:54:09.750Z",
-                "id": "5ad3052104ca76686242a17b"
+                "aoName": "廒间001",
+                "goodsNo": "01",
+                "goodsName": "货位01",
+                "sealingMark": "20180411",
+                "goodsCode": "001P0100101",
+                "capacity": "500",
+                "createdAt": "2018-04-12T12:59:31.400Z",
+                "updatedAt": "2018-04-12T12:59:31.400Z",
+                "id": "5acf58338dcb0e6feebef41d"
+            },
+            {
+                "socialcreditCode": "xiamenjiagongB1234",
+                "reservoirNo": "001",
+                "reservoirName": "库区001",
+                "stockNo": "P01",
+                "stockName": "平房仓P01",
+                "aoNo": "001",
+                "aoName": "廒间001",
+                "goodsNo": "02",
+                "goodsName": "货位02",
+                "sealingMark": "20180411",
+                "goodsCode": "001P0100102",
+                "capacity": "500",
+                "createdAt": "2018-04-12T12:59:46.308Z",
+                "updatedAt": "2018-04-12T12:59:46.308Z",
+                "id": "5acf58428dcb0e6feebef41e"
+            },
+            {
+                "socialcreditCode": "xiamenjiagongB1234",
+                "reservoirNo": "002",
+                "reservoirName": "库区002",
+                "stockNo": "L02",
+                "stockName": "楼房仓L02",
+                "aoNo": "002",
+                "aoName": "廒间002",
+                "goodsNo": "04",
+                "goodsName": "货位04",
+                "sealingMark": "20180411",
+                "goodsCode": "002L0200204",
+                "capacity": "500",
+                "createdAt": "2018-04-15T05:44:16.354Z",
+                "updatedAt": "2018-04-15T05:44:16.354Z",
+                "id": "5ad2e6b004ca76686242a177"
+            },
+            {
+                "socialcreditCode": "xiamenjiagongB1234",
+                "reservoirNo": "001",
+                "reservoirName": "库区001",
+                "stockNo": "P01",
+                "stockName": "平房仓P01",
+                "aoNo": "001",
+                "aoName": "廒间001",
+                "goodsNo": "03",
+                "goodsName": "货位03",
+                "sealingMark": "20180411",
+                "goodsCode": "001P0100103",
+                "capacity": "500",
+                "createdAt": "2018-04-15T05:44:54.043Z",
+                "updatedAt": "2018-04-15T05:44:54.043Z",
+                "id": "5ad2e6d604ca76686242a178"
+            },
+            {
+                "socialcreditCode": "xiamenjiagongB1234",
+                "reservoirNo": "001",
+                "reservoirName": "库区001",
+                "stockNo": "P01",
+                "stockName": "平房仓P01",
+                "aoNo": "001",
+                "aoName": "廒间001",
+                "goodsNo": "05",
+                "goodsName": "货位05",
+                "sealingMark": "20180411",
+                "goodsCode": "001P0100105",
+                "capacity": "500",
+                "createdAt": "2018-04-15T05:45:21.805Z",
+                "updatedAt": "2018-04-15T05:45:21.805Z",
+                "id": "5ad2e6f104ca76686242a179"
             }
         ],
-        "stockinInfo": [
+        "goodsInfo": [
             {
-                "socialcreditCode": "12345671",
-                "stockinidentificationCode": "1234300100100100120180410",
-                "stockinNo": "shichangxue",
+                "socialcreditCode": "xiamenjiagongB1234",
+                "goodsCode": "001P0100101",
                 "variety": "小麦",
                 "grade": "二级",
-                "production": "黑龙江",
+                "production": "哈尔滨",
                 "producingYear": "2018",
-                "stockinCount": "10000",
                 "packing": "包装",
-                "carriageType": "汽车",
-                "carriageNo": "34hhjk8",
-                "stockinTime": "20180410",
-                "upstreamorganizationCode": "123456",
-                "upstreamcompanyName": "百度",
-                "contractNo": "dsahkflj43794",
-                "goodsCode": "001001001001",
-                "IPFS": "Qmdsfhuoefonfsdnncnsjf",
-                "createdAt": "2018-04-15T07:51:43.571Z",
-                "updatedAt": "2018-04-15T07:51:43.571Z",
-                "id": "5ad3048f04ca76686242a17a"
+                "capacity": 100,
+                "createdAt": "2018-04-16T07:45:42.923Z",
+                "updatedAt": "2018-04-16T07:45:42.923Z",
+                "id": "5ad454a697c64dfc0be4d1d5"
             }
         ]
     }
 }
 ```
-### 货位管理
-<a id="/goods/add"></a>
+### 货位粮食信息管理
+<a id="/goodsInfo/add"></a>
 - [x] [回到顶部](#top)
 #### 1.添加货位
 ##### 接口地址
 ```
-POST /goods/add
+POST /goodsInfo/add
 ```
 ##### 接口作用：
 
@@ -2490,6 +2549,7 @@ production|string|产地|Y
 producingYear|string|生产年份|Y
 packing|string|包装方式|Y
 capacity|integer|容量|Y
+QC|boolean|是否已有质检信息（默认：false）|Y
 ##### input:
 ```
 {
@@ -3482,8 +3542,7 @@ testConclusion|string|检验结论|Y
 instruction|string|说明|Y
 qualityIndex|json|质量指标|Y
 characterIndex|json|品质指标|Y
-healthIndex|json|品质指标|Y
-characterIndex|json|卫生指标|Y
+healthIndex|json|卫生指标|Y
 isComplete|boolean|是否保存（true：之后不可编辑false（默认）：不修改此字段，质检信息可编辑）|Y
 ##### input:
 ```
