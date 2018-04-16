@@ -1,47 +1,41 @@
 /**
- * Goods.js
+ * GoodsInfo.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: 'goods',
+  tableName:'goodsInfo',
   attributes: {
     socialcreditCode: {
       type: 'string'
     },
-    reservoirNo: {
-      type: 'string'
-    },
-    reservoirName: {
-      type: 'string'
-    },
-    stockNo: {
-      type: 'string'
-    },
-    stockName: {
-      type: 'string'
-    },
-    aoNo: {
-      type: 'string'
-    },
-    aoName: {
-      type: 'string'
-    },
-    goodsNo: {
-      type: 'string'
-    },
-    goodsName: {
-      type: 'string'
-    },
-    sealingMark: {
+    companyName: {
       type: 'string'
     },
     //货位编码
     goodsCode: {
       type: 'string'
     },
+    variety: {
+      type: 'string'
+    },
+    //等级
+    grade: {
+      type: 'string'
+    },
+    production: {
+      type: 'string'
+    },
+    producingYear: {
+      type: 'string'
+    },
+    packing: {
+      type: 'string',
+      enum: ['包装', '散装']
+    },
+    //当前货位的容量
     capacity: {
       type: 'integer'
     }

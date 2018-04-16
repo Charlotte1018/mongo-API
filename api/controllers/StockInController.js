@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-    add: (req, res, callback) => {
+    add: (req, res) => {
         let params = req.body;
         let isExitParams1 = {
             socialcreditCode: params.socialcreditCode,
@@ -56,7 +56,7 @@ module.exports = {
             }
 
         }], (err, isExit, isUpdate, result) => {
-            console.log(`isExit:'${isExit},isUpdate:'${isUpdate},result:'${result}`);
+            // console.log(`isExit:'${isExit},isUpdate:'${isUpdate},result:'${result}`);
             if (err) res.send(Message.messages(0, '创建失败！', err));
             if (isExit) {
                 res.send(Message.messages(0, '入库信息已添加，不入库登记', result));
