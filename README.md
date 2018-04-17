@@ -3677,7 +3677,7 @@ POST /QCInfo/add
 
 参数名 | 类型 |参数解释 | 是否必选（Y必选N可选）
 ---|---|---|---
-socialcreditCode|string|社会信用代码|Y
+socialcreditCode|string|质检企业社会信用代码|Y
 companyName|string|质检企业名称|Y
 checksocialcreditCode|string|抽检企业社会信用代码|Y
 checkcompanyName|string|抽检企业名称|Y
@@ -3907,8 +3907,7 @@ socialcreditCode|string|社会信用代码|Y
 ##### input:
 ```
 {
-	"id":"5ad33f55bdddc0230b351819",
-    "":""(更新的字段)
+	"socialcreditCode":"5ad33f55bdddc0230b351819"
 }
 ```
 ##### output:
