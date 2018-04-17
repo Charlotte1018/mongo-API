@@ -3680,8 +3680,8 @@ POST /QCInfo/add
 socialcreditCode|string|质检企业社会信用代码|Y
 companyName|string|质检企业名称|Y
 checksocialcreditCode|string|抽检企业社会信用代码|Y
-checkcompanyName|string|抽检企业名称|Y
-checkgoodsCode|string|抽检货位编码|Y
+checkcompanyName|string|被抽检企业名称|Y
+checkgoodsCode|string|被抽检货位编码|Y
 reportNumber|string|报告编号|Y
 taskSource|string|任务来源|Y
 sampleName|string|样品名称|Y
