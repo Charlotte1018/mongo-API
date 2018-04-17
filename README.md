@@ -3954,7 +3954,7 @@ socialcreditCode|string|社会信用代码|Y
 #### 查询所有企业
 ##### 接口地址：
 ```
-POST /supervise/login
+POST /supervise/find
 ```
 接口作用：
 ```
