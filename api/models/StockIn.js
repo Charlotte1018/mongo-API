@@ -90,9 +90,14 @@ module.exports = {
     IPFS: {
       type: 'string'
     },
+    //企业推送或者自主录入
     inType: {
       type: 'string',
       enum: ['待办', '自主']
-    }
+    },
+    //是否质检
+    QC: {
+      type: 'boolean'
+    },
   }
 };
