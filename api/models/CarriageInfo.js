@@ -27,12 +27,20 @@ module.exports = {
     shipper: {
       type: 'string'
     },
+    //发货方名称
+    shipperName: {
+      type: 'string'
+    },
     //发货时间
     deliveryTime: {
       type: 'string'
     },
     //接受方(企业信用代码)
     receiver: {
+      type: 'string'
+    },
+    //接受方名称
+    receiverName: {
       type: 'string'
     },
     //接受时间
