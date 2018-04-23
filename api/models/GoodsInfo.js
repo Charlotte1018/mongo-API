@@ -38,7 +38,11 @@ module.exports = {
     //当前货位的容量
     capacity: {
       type: 'integer'
-    }
+    },
+    //封仓时间
+    sealingMark: {
+      type: 'string'
+    },
   }
 };
 
